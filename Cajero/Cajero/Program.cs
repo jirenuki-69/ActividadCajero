@@ -11,48 +11,38 @@ namespace Cajero
         static void Main(string[] args)
         {
             Cajero cajero = new Cajero();
+            cajero.Denominaciones.ForEach( e => e[1] += 3 ); //Nada más le agrego a las denominaciones para hacer pruebas
 
-            try {
-
-                List<int> cambio = cajero.ReturnChange(cajero.Denominaciones, 12);
-                Console.WriteLine(string.Join(" ", cambio));
-
-            } catch (Exception e) {
-
-                Console.WriteLine(e.Message);
-
-            }
-
+            List<double> cambio = cajero.ReturnChange(cajero.Denominaciones, 12.50);
+            Console.WriteLine(string.Join(" ", cambio));
             Console.ReadKey();
         }
     }
-    class Cajero
+    public class Cajero
     {
-        //readonly double[] denominaciones = new double[] { .10, .20, .50, 1, 2, 5, 10, 20, 50, 100, 200, 500 };
-        //private int[] cantidadDenominaciones = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; 
-        private List<List<int>> denominaciones = new List<List<int>>() 
+        private List<List<double>> denominaciones = new List<List<double>>() 
         {
-            //new List<int> { .10, 0 },
-            //new List<int> { .20, 0 },
-            //new List<int> { .50, 0 },
-            new List<int> { 1, 0 },
-            new List<int> { 2, 0 },
-            new List<int> { 5, 0 },
-            new List<int> { 10, 0 },
-            new List<int> { 20, 0 },
-            new List<int> { 50, 0 },
-            new List<int> { 100, 0 },
-            new List<int> { 200, 0 },
-            new List<int> { 500, 0 }
+            new List<double> { .10, 0 },
+            new List<double> { .20, 0 },
+            new List<double> { .50, 0 },
+            new List<double> { 1, 0 },
+            new List<double> { 2, 0 },
+            new List<double> { 5, 0 },
+            new List<double> { 10, 0 },
+            new List<double> { 20, 0 },
+            new List<double> { 50, 0 },
+            new List<double> { 100, 0 },
+            new List<double> { 200, 0 },
+            new List<double> { 500, 0 }
         };
 
-        public List<List<int>> Denominaciones { get => denominaciones; set => denominaciones = value; }
+        public List<List<double>> Denominaciones { get => denominaciones; set => denominaciones = value; }
 
-        public List<int> ReturnChange(List<List<int>> monedas, int cantidad)
+        public List<double> ReturnChange(List<List<double>> monedas, double cantidad)
         {
             BubbleSort(monedas);
-            int n = cantidad;
-            int cantidadTotal = 0;
+            double n = cantidad;
+            double cantidadTotal = 0;
 
             for (int i = 0; i < monedas.Count; i++)
             {
@@ -72,8 +62,8 @@ namespace Cajero
 
             }
 
-            List<List<int>> matriz = new List<List<int>>();
-            List<int> fila1 = new List<int>() { 0 };
+            List<List<double>> matriz = new List<List<double>>();
+            List<double> fila1 = new List<double>() { 0 };
 
             for (int i = 0; i < cantidad + 1; i++)
             {
@@ -81,7 +71,7 @@ namespace Cajero
             }
             matriz.Add(fila1);
 
-            fila1 = new List<int>();
+            fila1 = new List<double>();
 
             for (int i = 0; i < monedas.Count; i++)
             {
@@ -107,25 +97,27 @@ namespace Cajero
                     }
                     else if (matriz[0][j] > monedas[i][0])
                     {
+                        int indexTemp = monedas[i][0] < 1 ? 1 : Convert.ToInt32(monedas[i][0]);
 
-                        fila1.Add(fila1[j - monedas[i][0]] + 1);
+                        fila1.Add(fila1[j - indexTemp] + 1);
 
                     }
                 }
 
                 matriz.Add(fila1);
-                fila1 = new List<int>() { };
+                fila1 = new List<double>() { };
             }
 
-            List<int> numeros = new List<int>();
+            List<double> numeros = new List<double>();
 
-            while (n != 0)
+            while (n != 0 || n > 0)
             {
-                List<List<int>> posiblesMonedas = new List<List<int>>() { };
+                List<List<double>> posiblesMonedas = new List<List<double>>() { };
 
                 for (int i = 1; i < monedas.Count + 1; i++)
                 {
-                    posiblesMonedas.Add(new List<int> { matriz[i][n + 1], i });
+                    int indexTemp = Convert.ToInt32(n + 1);
+                    posiblesMonedas.Add(new List<double> { matriz[i][indexTemp], i });
                 }
 
                 BubbleSort(posiblesMonedas);
@@ -138,8 +130,9 @@ namespace Cajero
                     {
                         if ((n - matriz[indexPosiblesMonedas][0]) >= 0)
                         {
+                            Console.WriteLine(matriz[indexPosiblesMonedas][0]);
                             numeros.Add(matriz[indexPosiblesMonedas][0]);
-                            n = n - matriz[indexPosiblesMonedas][0];
+                            n = Math.Round(n - matriz[indexPosiblesMonedas][0], 1);
                             monedas[indexPosiblesMonedas - 1][1] = monedas[indexPosiblesMonedas - 1][1] - 1;
                             break;
                         }
@@ -156,7 +149,7 @@ namespace Cajero
             return numeros;
         }
 
-        private void BubbleSort(List<List<int>> data)
+        private void BubbleSort(List<List<double>> data)
         {
             int n = data.Count;
             for (int i = 0; i < n - 1; i++)
@@ -165,7 +158,7 @@ namespace Cajero
                 {
                     if (data[j][0] > data[j + 1][0])
                     {
-                        List<int> aux = data[j];
+                        List<double> aux = data[j];
                         data[j] = data[j + 1];
                         data[j + 1] = aux;
                     }
