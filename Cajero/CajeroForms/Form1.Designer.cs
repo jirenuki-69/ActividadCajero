@@ -33,14 +33,11 @@
             this.txt500pesos = new System.Windows.Forms.TextBox();
             this.txt200pesos = new System.Windows.Forms.TextBox();
             this.txt100pesos = new System.Windows.Forms.TextBox();
-            this.txt20Centavos = new System.Windows.Forms.TextBox();
-            this.txt50Centavos = new System.Windows.Forms.TextBox();
             this.txt1peso = new System.Windows.Forms.TextBox();
             this.txt2pesos = new System.Windows.Forms.TextBox();
             this.txt20pesos = new System.Windows.Forms.TextBox();
             this.txt10pesos = new System.Windows.Forms.TextBox();
             this.txt5pesos = new System.Windows.Forms.TextBox();
-            this.txt10Centavos = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -50,9 +47,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnPedir = new System.Windows.Forms.Button();
@@ -63,11 +57,8 @@
             this.btn200b = new System.Windows.Forms.Button();
             this.btn1p = new System.Windows.Forms.Button();
             this.btn100b = new System.Windows.Forms.Button();
-            this.btn2c = new System.Windows.Forms.Button();
             this.btn5p = new System.Windows.Forms.Button();
-            this.btn50c = new System.Windows.Forms.Button();
             this.btn10p = new System.Windows.Forms.Button();
-            this.btn1c = new System.Windows.Forms.Button();
             this.labelIntroducido = new System.Windows.Forms.Label();
             this.labelTotal = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -85,6 +76,8 @@
             this.imgCoca = new System.Windows.Forms.PictureBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.labelPantalla = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.labelMonedero = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -94,6 +87,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCoca)).BeginInit();
             this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -102,14 +96,11 @@
             this.groupBox1.Controls.Add(this.txt500pesos);
             this.groupBox1.Controls.Add(this.txt200pesos);
             this.groupBox1.Controls.Add(this.txt100pesos);
-            this.groupBox1.Controls.Add(this.txt20Centavos);
-            this.groupBox1.Controls.Add(this.txt50Centavos);
             this.groupBox1.Controls.Add(this.txt1peso);
             this.groupBox1.Controls.Add(this.txt2pesos);
             this.groupBox1.Controls.Add(this.txt20pesos);
             this.groupBox1.Controls.Add(this.txt10pesos);
             this.groupBox1.Controls.Add(this.txt5pesos);
-            this.groupBox1.Controls.Add(this.txt10Centavos);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
@@ -119,9 +110,6 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 27);
@@ -134,7 +122,7 @@
             // txt50pesos
             // 
             this.txt50pesos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt50pesos.Location = new System.Drawing.Point(154, 360);
+            this.txt50pesos.Location = new System.Drawing.Point(173, 243);
             this.txt50pesos.Name = "txt50pesos";
             this.txt50pesos.ReadOnly = true;
             this.txt50pesos.Size = new System.Drawing.Size(314, 24);
@@ -143,7 +131,7 @@
             // txt500pesos
             // 
             this.txt500pesos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt500pesos.Location = new System.Drawing.Point(154, 492);
+            this.txt500pesos.Location = new System.Drawing.Point(173, 375);
             this.txt500pesos.Name = "txt500pesos";
             this.txt500pesos.ReadOnly = true;
             this.txt500pesos.Size = new System.Drawing.Size(314, 24);
@@ -152,7 +140,7 @@
             // txt200pesos
             // 
             this.txt200pesos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt200pesos.Location = new System.Drawing.Point(154, 448);
+            this.txt200pesos.Location = new System.Drawing.Point(173, 331);
             this.txt200pesos.Name = "txt200pesos";
             this.txt200pesos.ReadOnly = true;
             this.txt200pesos.Size = new System.Drawing.Size(314, 24);
@@ -161,34 +149,16 @@
             // txt100pesos
             // 
             this.txt100pesos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt100pesos.Location = new System.Drawing.Point(154, 402);
+            this.txt100pesos.Location = new System.Drawing.Point(173, 285);
             this.txt100pesos.Name = "txt100pesos";
             this.txt100pesos.ReadOnly = true;
             this.txt100pesos.Size = new System.Drawing.Size(314, 24);
             this.txt100pesos.TabIndex = 19;
             // 
-            // txt20Centavos
-            // 
-            this.txt20Centavos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt20Centavos.Location = new System.Drawing.Point(154, 81);
-            this.txt20Centavos.Name = "txt20Centavos";
-            this.txt20Centavos.ReadOnly = true;
-            this.txt20Centavos.Size = new System.Drawing.Size(314, 24);
-            this.txt20Centavos.TabIndex = 18;
-            // 
-            // txt50Centavos
-            // 
-            this.txt50Centavos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt50Centavos.Location = new System.Drawing.Point(154, 120);
-            this.txt50Centavos.Name = "txt50Centavos";
-            this.txt50Centavos.ReadOnly = true;
-            this.txt50Centavos.Size = new System.Drawing.Size(314, 24);
-            this.txt50Centavos.TabIndex = 17;
-            // 
             // txt1peso
             // 
             this.txt1peso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt1peso.Location = new System.Drawing.Point(154, 159);
+            this.txt1peso.Location = new System.Drawing.Point(173, 42);
             this.txt1peso.Name = "txt1peso";
             this.txt1peso.ReadOnly = true;
             this.txt1peso.Size = new System.Drawing.Size(314, 24);
@@ -197,7 +167,7 @@
             // txt2pesos
             // 
             this.txt2pesos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt2pesos.Location = new System.Drawing.Point(154, 198);
+            this.txt2pesos.Location = new System.Drawing.Point(173, 81);
             this.txt2pesos.Name = "txt2pesos";
             this.txt2pesos.ReadOnly = true;
             this.txt2pesos.Size = new System.Drawing.Size(314, 24);
@@ -206,7 +176,7 @@
             // txt20pesos
             // 
             this.txt20pesos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt20pesos.Location = new System.Drawing.Point(154, 317);
+            this.txt20pesos.Location = new System.Drawing.Point(173, 200);
             this.txt20pesos.Name = "txt20pesos";
             this.txt20pesos.ReadOnly = true;
             this.txt20pesos.Size = new System.Drawing.Size(314, 24);
@@ -215,7 +185,7 @@
             // txt10pesos
             // 
             this.txt10pesos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt10pesos.Location = new System.Drawing.Point(154, 276);
+            this.txt10pesos.Location = new System.Drawing.Point(173, 159);
             this.txt10pesos.Name = "txt10pesos";
             this.txt10pesos.ReadOnly = true;
             this.txt10pesos.Size = new System.Drawing.Size(314, 24);
@@ -224,25 +194,16 @@
             // txt5pesos
             // 
             this.txt5pesos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt5pesos.Location = new System.Drawing.Point(154, 237);
+            this.txt5pesos.Location = new System.Drawing.Point(173, 120);
             this.txt5pesos.Name = "txt5pesos";
             this.txt5pesos.ReadOnly = true;
             this.txt5pesos.Size = new System.Drawing.Size(314, 24);
             this.txt5pesos.TabIndex = 12;
             // 
-            // txt10Centavos
-            // 
-            this.txt10Centavos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt10Centavos.Location = new System.Drawing.Point(154, 42);
-            this.txt10Centavos.Name = "txt10Centavos";
-            this.txt10Centavos.ReadOnly = true;
-            this.txt10Centavos.Size = new System.Drawing.Size(314, 24);
-            this.txt10Centavos.TabIndex = 1;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 494);
+            this.label12.Location = new System.Drawing.Point(9, 377);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(146, 24);
             this.label12.TabIndex = 11;
@@ -251,7 +212,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 402);
+            this.label11.Location = new System.Drawing.Point(9, 285);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(146, 24);
             this.label11.TabIndex = 10;
@@ -260,7 +221,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 448);
+            this.label10.Location = new System.Drawing.Point(9, 331);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(146, 24);
             this.label10.TabIndex = 9;
@@ -269,7 +230,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 358);
+            this.label9.Location = new System.Drawing.Point(9, 241);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(135, 24);
             this.label9.TabIndex = 8;
@@ -278,7 +239,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 315);
+            this.label8.Location = new System.Drawing.Point(9, 198);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(135, 24);
             this.label8.TabIndex = 7;
@@ -287,7 +248,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 272);
+            this.label7.Location = new System.Drawing.Point(9, 155);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(154, 24);
             this.label7.TabIndex = 6;
@@ -296,7 +257,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 235);
+            this.label6.Location = new System.Drawing.Point(9, 118);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(143, 24);
             this.label6.TabIndex = 5;
@@ -305,7 +266,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 196);
+            this.label5.Location = new System.Drawing.Point(9, 79);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(143, 24);
             this.label5.TabIndex = 4;
@@ -314,38 +275,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 155);
+            this.label4.Location = new System.Drawing.Point(9, 38);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(143, 24);
             this.label4.TabIndex = 3;
             this.label4.Text = "Monedas de 1";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 117);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 24);
-            this.label3.TabIndex = 2;
-            this.label3.Text = ".50 Centavos";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 79);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = ".20 Centavos";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = ".10 Centavos";
             // 
             // groupBox2
             // 
@@ -357,11 +291,8 @@
             this.groupBox2.Controls.Add(this.btn200b);
             this.groupBox2.Controls.Add(this.btn1p);
             this.groupBox2.Controls.Add(this.btn100b);
-            this.groupBox2.Controls.Add(this.btn2c);
             this.groupBox2.Controls.Add(this.btn5p);
-            this.groupBox2.Controls.Add(this.btn50c);
             this.groupBox2.Controls.Add(this.btn10p);
-            this.groupBox2.Controls.Add(this.btn1c);
             this.groupBox2.Controls.Add(this.labelIntroducido);
             this.groupBox2.Controls.Add(this.labelTotal);
             this.groupBox2.Controls.Add(this.groupBox4);
@@ -395,7 +326,7 @@
             // 
             this.btn500b.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn500b.ForeColor = System.Drawing.Color.Black;
-            this.btn500b.Location = new System.Drawing.Point(514, 513);
+            this.btn500b.Location = new System.Drawing.Point(215, 513);
             this.btn500b.Name = "btn500b";
             this.btn500b.Size = new System.Drawing.Size(94, 34);
             this.btn500b.TabIndex = 39;
@@ -407,7 +338,7 @@
             // 
             this.btn20b.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn20b.ForeColor = System.Drawing.Color.Black;
-            this.btn20b.Location = new System.Drawing.Point(115, 513);
+            this.btn20b.Location = new System.Drawing.Point(415, 462);
             this.btn20b.Name = "btn20b";
             this.btn20b.Size = new System.Drawing.Size(94, 34);
             this.btn20b.TabIndex = 38;
@@ -419,7 +350,7 @@
             // 
             this.btn50b.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn50b.ForeColor = System.Drawing.Color.Black;
-            this.btn50b.Location = new System.Drawing.Point(214, 513);
+            this.btn50b.Location = new System.Drawing.Point(515, 462);
             this.btn50b.Name = "btn50b";
             this.btn50b.Size = new System.Drawing.Size(94, 34);
             this.btn50b.TabIndex = 36;
@@ -431,7 +362,7 @@
             // 
             this.btn2p.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn2p.ForeColor = System.Drawing.Color.Black;
-            this.btn2p.Location = new System.Drawing.Point(414, 462);
+            this.btn2p.Location = new System.Drawing.Point(115, 462);
             this.btn2p.Name = "btn2p";
             this.btn2p.Size = new System.Drawing.Size(94, 34);
             this.btn2p.TabIndex = 33;
@@ -443,7 +374,7 @@
             // 
             this.btn200b.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn200b.ForeColor = System.Drawing.Color.Black;
-            this.btn200b.Location = new System.Drawing.Point(414, 513);
+            this.btn200b.Location = new System.Drawing.Point(115, 513);
             this.btn200b.Name = "btn200b";
             this.btn200b.Size = new System.Drawing.Size(94, 34);
             this.btn200b.TabIndex = 37;
@@ -455,7 +386,7 @@
             // 
             this.btn1p.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn1p.ForeColor = System.Drawing.Color.Black;
-            this.btn1p.Location = new System.Drawing.Point(314, 462);
+            this.btn1p.Location = new System.Drawing.Point(15, 462);
             this.btn1p.Name = "btn1p";
             this.btn1p.Size = new System.Drawing.Size(94, 34);
             this.btn1p.TabIndex = 35;
@@ -467,7 +398,7 @@
             // 
             this.btn100b.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn100b.ForeColor = System.Drawing.Color.Black;
-            this.btn100b.Location = new System.Drawing.Point(314, 513);
+            this.btn100b.Location = new System.Drawing.Point(15, 513);
             this.btn100b.Name = "btn100b";
             this.btn100b.Size = new System.Drawing.Size(94, 34);
             this.btn100b.TabIndex = 34;
@@ -475,23 +406,11 @@
             this.btn100b.UseVisualStyleBackColor = true;
             this.btn100b.Click += new System.EventHandler(this.btn100b_Click);
             // 
-            // btn2c
-            // 
-            this.btn2c.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn2c.ForeColor = System.Drawing.Color.Black;
-            this.btn2c.Location = new System.Drawing.Point(115, 462);
-            this.btn2c.Name = "btn2c";
-            this.btn2c.Size = new System.Drawing.Size(94, 34);
-            this.btn2c.TabIndex = 32;
-            this.btn2c.Text = ".20 Centavos";
-            this.btn2c.UseVisualStyleBackColor = true;
-            this.btn2c.Click += new System.EventHandler(this.btn2c_Click);
-            // 
             // btn5p
             // 
             this.btn5p.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn5p.ForeColor = System.Drawing.Color.Black;
-            this.btn5p.Location = new System.Drawing.Point(514, 462);
+            this.btn5p.Location = new System.Drawing.Point(215, 462);
             this.btn5p.Name = "btn5p";
             this.btn5p.Size = new System.Drawing.Size(94, 34);
             this.btn5p.TabIndex = 31;
@@ -499,41 +418,17 @@
             this.btn5p.UseVisualStyleBackColor = true;
             this.btn5p.Click += new System.EventHandler(this.btn5p_Click);
             // 
-            // btn50c
-            // 
-            this.btn50c.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn50c.ForeColor = System.Drawing.Color.Black;
-            this.btn50c.Location = new System.Drawing.Point(215, 462);
-            this.btn50c.Name = "btn50c";
-            this.btn50c.Size = new System.Drawing.Size(94, 34);
-            this.btn50c.TabIndex = 30;
-            this.btn50c.Text = ".50 Centavos";
-            this.btn50c.UseVisualStyleBackColor = true;
-            this.btn50c.Click += new System.EventHandler(this.btn50c_Click);
-            // 
             // btn10p
             // 
             this.btn10p.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn10p.ForeColor = System.Drawing.Color.Black;
-            this.btn10p.Location = new System.Drawing.Point(15, 513);
+            this.btn10p.Location = new System.Drawing.Point(315, 462);
             this.btn10p.Name = "btn10p";
             this.btn10p.Size = new System.Drawing.Size(94, 34);
             this.btn10p.TabIndex = 29;
             this.btn10p.Text = "10 Pesos";
             this.btn10p.UseVisualStyleBackColor = true;
             this.btn10p.Click += new System.EventHandler(this.btn10p_Click);
-            // 
-            // btn1c
-            // 
-            this.btn1c.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn1c.ForeColor = System.Drawing.Color.Black;
-            this.btn1c.Location = new System.Drawing.Point(15, 462);
-            this.btn1c.Name = "btn1c";
-            this.btn1c.Size = new System.Drawing.Size(94, 34);
-            this.btn1c.TabIndex = 24;
-            this.btn1c.Text = ".10 Centavos";
-            this.btn1c.UseVisualStyleBackColor = true;
-            this.btn1c.Click += new System.EventHandler(this.btn1c_Click);
             // 
             // labelIntroducido
             // 
@@ -580,9 +475,9 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(6, 35);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(167, 20);
+            this.label15.Size = new System.Drawing.Size(142, 20);
             this.label15.TabIndex = 2;
-            this.label15.Text = "Precio: 11.50 pesos";
+            this.label15.Text = "Precio: 11 pesos";
             // 
             // groupBox5
             // 
@@ -612,9 +507,9 @@
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(6, 36);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(167, 20);
+            this.label16.Size = new System.Drawing.Size(142, 20);
             this.label16.TabIndex = 3;
-            this.label16.Text = "Precio: 12.00 pesos";
+            this.label16.Text = "Precio: 12 pesos";
             // 
             // groupBox3
             // 
@@ -622,7 +517,7 @@
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.Color.Cornsilk;
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(198, 42);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(384, 100);
@@ -633,6 +528,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.Color.White;
             this.label17.Location = new System.Drawing.Point(6, 58);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(220, 20);
@@ -652,9 +548,9 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(6, 37);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(167, 20);
+            this.label13.Size = new System.Drawing.Size(142, 20);
             this.label13.TabIndex = 0;
-            this.label13.Text = "Precio: 13.50 pesos";
+            this.label13.Text = "Precio: 13 pesos";
             // 
             // imgDrPepper
             // 
@@ -712,7 +608,27 @@
             this.labelPantalla.Size = new System.Drawing.Size(74, 24);
             this.labelPantalla.TabIndex = 0;
             this.labelPantalla.Text = "Estado";
-            this.labelPantalla.Visible = false;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.labelMonedero);
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox7.ForeColor = System.Drawing.SystemColors.Menu;
+            this.groupBox7.Location = new System.Drawing.Point(603, 611);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(805, 100);
+            this.groupBox7.TabIndex = 25;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Monedero";
+            // 
+            // labelMonedero
+            // 
+            this.labelMonedero.AutoSize = true;
+            this.labelMonedero.Location = new System.Drawing.Point(6, 45);
+            this.labelMonedero.Name = "labelMonedero";
+            this.labelMonedero.Size = new System.Drawing.Size(74, 24);
+            this.labelMonedero.TabIndex = 0;
+            this.labelMonedero.Text = "Estado";
             // 
             // Form1
             // 
@@ -720,6 +636,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Indigo;
             this.ClientSize = new System.Drawing.Size(1458, 745);
+            this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -740,6 +657,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgCoca)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -751,14 +670,11 @@
         private System.Windows.Forms.TextBox txt500pesos;
         private System.Windows.Forms.TextBox txt200pesos;
         private System.Windows.Forms.TextBox txt100pesos;
-        private System.Windows.Forms.TextBox txt20Centavos;
-        private System.Windows.Forms.TextBox txt50Centavos;
         private System.Windows.Forms.TextBox txt1peso;
         private System.Windows.Forms.TextBox txt2pesos;
         private System.Windows.Forms.TextBox txt20pesos;
         private System.Windows.Forms.TextBox txt10pesos;
         private System.Windows.Forms.TextBox txt5pesos;
-        private System.Windows.Forms.TextBox txt10Centavos;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -768,9 +684,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox imgCoca;
@@ -794,15 +707,14 @@
         private System.Windows.Forms.Button btn200b;
         private System.Windows.Forms.Button btn1p;
         private System.Windows.Forms.Button btn100b;
-        private System.Windows.Forms.Button btn2c;
         private System.Windows.Forms.Button btn5p;
-        private System.Windows.Forms.Button btn50c;
         private System.Windows.Forms.Button btn10p;
-        private System.Windows.Forms.Button btn1c;
         private System.Windows.Forms.Label labelIntroducido;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label labelPantalla;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label labelMonedero;
     }
 }
 

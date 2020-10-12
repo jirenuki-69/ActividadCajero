@@ -13,7 +13,7 @@ namespace Cajero
             Cajero cajero = new Cajero();
             cajero.Denominaciones.ForEach( e => e[1] += 3 ); //Nada más le agrego a las denominaciones para hacer pruebas
 
-            List<double> cambio = cajero.ReturnChange(cajero.Denominaciones, 12.50);
+            List<double> cambio = cajero.ReturnChange(cajero.Denominaciones, 15.0 - 13.5); //1.5
             Console.WriteLine(string.Join(" ", cambio));
             Console.ReadKey();
         }
