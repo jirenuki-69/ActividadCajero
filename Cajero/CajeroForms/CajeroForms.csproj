@@ -89,5 +89,11 @@
   <ItemGroup>
     <None Include="Resources\dr_pepper.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cajero\Cajero.csproj">
+      <Project>{f083aa20-74a5-4473-b38c-b4ead11362a9}</Project>
+      <Name>Cajero</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
