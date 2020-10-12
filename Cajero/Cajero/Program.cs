@@ -1,55 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cajero
+namespace CajeroClases
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Cajero cajero = new Cajero();
-            cajero.Denominaciones.ForEach( e => e[1] += 3 ); //Nada más le agrego a las denominaciones para hacer pruebas
-
-            List<double> cambio = cajero.ReturnChange(cajero.Denominaciones, 15.0 - 13.5); //1.5
-            Console.WriteLine(string.Join(" ", cambio));
-            Console.ReadKey();
         }
     }
     public class Cajero
     {
-        private List<List<double>> denominaciones = new List<List<double>>() 
+        private List<List<int>> denominaciones = new List<List<int>>()
         {
-            new List<double> { .10, 0 },
-            new List<double> { .20, 0 },
-            new List<double> { .50, 0 },
-            new List<double> { 1, 0 },
-            new List<double> { 2, 0 },
-            new List<double> { 5, 0 },
-            new List<double> { 10, 0 },
-            new List<double> { 20, 0 },
-            new List<double> { 50, 0 },
-            new List<double> { 100, 0 },
-            new List<double> { 200, 0 },
-            new List<double> { 500, 0 }
+            //new List<int> { .10, 0 },
+            //new List<int> { .20, 0 },
+            //new List<int> { .50, 0 },
+            new List<int> { 1, 0 },
+            new List<int> { 2, 0 },
+            new List<int> { 5, 0 },
+            new List<int> { 10, 0 },
+            new List<int> { 20, 0 },
+            new List<int> { 50, 0 },
+            new List<int> { 100, 0 },
+            new List<int> { 200, 0 },
+            new List<int> { 500, 0 }
         };
+        private MoneyManager moneyManager = new MoneyManager();
 
-        public List<List<double>> Denominaciones { get => denominaciones; set => denominaciones = value; }
+        public List<List<int>> Denominaciones { get => denominaciones; set => denominaciones = value; }
+        public MoneyManager _MoneyManager { get => moneyManager; set => moneyManager = value; }
 
-        public List<double> ReturnChange(List<List<double>> monedas, double cantidad)
+        public List<int> ReturnChange(List<List<int>> monedas, int cantidad)
         {
             BubbleSort(monedas);
-            double n = cantidad;
-            double cantidadTotal = 0;
+            int n = cantidad;
 
-            for (int i = 0; i < monedas.Count; i++)
-            {
-                cantidadTotal = cantidadTotal + monedas[i][0] * monedas[i][1];
-            }
-
-            if (cantidad > cantidadTotal)
+            if (cantidad > moneyManager.DineroTotal)
             {
 
                 throw new Exception("Error, la cantidad de monedas no alcanza a cubrir la cantidad ingresada");
@@ -62,8 +53,8 @@ namespace Cajero
 
             }
 
-            List<List<double>> matriz = new List<List<double>>();
-            List<double> fila1 = new List<double>() { 0 };
+            List<List<int>> matriz = new List<List<int>>();
+            List<int> fila1 = new List<int>() { 0 };
 
             for (int i = 0; i < cantidad + 1; i++)
             {
@@ -71,7 +62,7 @@ namespace Cajero
             }
             matriz.Add(fila1);
 
-            fila1 = new List<double>();
+            fila1 = new List<int>();
 
             for (int i = 0; i < monedas.Count; i++)
             {
@@ -105,19 +96,19 @@ namespace Cajero
                 }
 
                 matriz.Add(fila1);
-                fila1 = new List<double>() { };
+                fila1 = new List<int>() { };
             }
 
-            List<double> numeros = new List<double>();
+            List<int> numeros = new List<int>();
 
             while (n != 0 || n > 0)
             {
-                List<List<double>> posiblesMonedas = new List<List<double>>() { };
+                List<List<int>> posiblesMonedas = new List<List<int>>() { };
 
                 for (int i = 1; i < monedas.Count + 1; i++)
                 {
                     int indexTemp = Convert.ToInt32(n + 1);
-                    posiblesMonedas.Add(new List<double> { matriz[i][indexTemp], i });
+                    posiblesMonedas.Add(new List<int> { matriz[i][indexTemp], i });
                 }
 
                 BubbleSort(posiblesMonedas);
@@ -132,7 +123,7 @@ namespace Cajero
                         {
                             Console.WriteLine(matriz[indexPosiblesMonedas][0]);
                             numeros.Add(matriz[indexPosiblesMonedas][0]);
-                            n = Math.Round(n - matriz[indexPosiblesMonedas][0], 1);
+                            n = n - matriz[indexPosiblesMonedas][0];
                             monedas[indexPosiblesMonedas - 1][1] = monedas[indexPosiblesMonedas - 1][1] - 1;
                             break;
                         }
@@ -145,11 +136,10 @@ namespace Cajero
                     }
                 }
             }
-
             return numeros;
         }
 
-        private void BubbleSort(List<List<double>> data)
+        private void BubbleSort(List<List<int>> data)
         {
             int n = data.Count;
             for (int i = 0; i < n - 1; i++)
@@ -158,7 +148,7 @@ namespace Cajero
                 {
                     if (data[j][0] > data[j + 1][0])
                     {
-                        List<double> aux = data[j];
+                        List<int> aux = data[j];
                         data[j] = data[j + 1];
                         data[j + 1] = aux;
                     }
@@ -167,5 +157,50 @@ namespace Cajero
         }
     }
 
+    public class Producto
+    {
+        private string codigo, nombre, imagen;
+        private int precio, existencia;
 
+        public string Codigo { get => codigo; set => codigo = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Imagen { get => imagen; set => imagen = value; }
+        public int Precio { get => precio; set => precio = value; }
+        public int Existencia { get => existencia; set => existencia = value; }
+    }
+
+    public class Inventario
+    {
+        private List<Producto> productos = new List<Producto>();
+
+        public List<Producto> Productos { get => productos; set => productos = value; }
+    }
+
+    public class MoneyManager
+    {
+        private int dineroTotal, dineroIntroducido;
+
+        public int DineroTotal { get => dineroTotal; }
+        public int DineroIntroducido { get => dineroIntroducido; }
+
+        public void GetDineroTotal(Cajero cajero)
+        {
+            dineroTotal = 0;
+            for(int i = 0; i < cajero.Denominaciones.Count; i++)
+            {
+                dineroTotal += cajero.Denominaciones[i][0] * cajero.Denominaciones[i][1];
+            }
+        }
+
+        public void AddDinero(int dinero)
+        {
+            dineroTotal += dinero;
+        }
+
+        public void ValorIntroducidoEvent(int dinero)
+        {
+            dineroIntroducido = dinero;
+            dineroTotal = dineroIntroducido;
+        }
+    }
 }

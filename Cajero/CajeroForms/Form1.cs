@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Cajero;
+using CajeroClases;
 
 namespace CajeroForms
 {
@@ -15,16 +15,47 @@ namespace CajeroForms
     {
         int total = 0;
         int introducido = 0;
-        Cajero cajero = new Cajero();
-        List<int> cambio = new List<int>();
 
+        Cajero cajero = new Cajero();
+        Inventario inventario = new Inventario(); //Este manejará mis productos
+        MoneyManager moneyManager = new MoneyManager(); //Este manejará el dinero
+        List<Producto> productos = new List<Producto>() 
+        { 
+            new Producto(){ 
+                Codigo = "A01",  
+                Nombre = "Coca cola de lata", 
+                Imagen = "https://www.elpasospirits.com/assets/images/coca%20cola%20sin%20azucar%20lata%20235%20ml.png", 
+                Precio = 13, 
+                Existencia = 8 
+            },
+            new Producto(){
+                Codigo = "B03",
+                Nombre = "Sprite de lata",
+                Imagen = "https://www.laconstancia.com/system/balloom/asset/pictures/attachments/000/001/107/original/lata.png",
+                Precio = 11,
+                Existencia = 6
+            },
+            new Producto(){
+                Codigo = "F02",
+                Nombre = "Botella de Dr. Pepper",
+                Imagen = "https://www.drpepper.com/images/featured/drpepper-diet.png",
+                Precio = 12,
+                Existencia = 3
+            },
+        };
+
+        Producto productoElegido;
+
+        List<int> cambio = new List<int>();
+        
         public Form1()
         {
             
             InitializeComponent();
 
-            
+            inventario.Productos = productos;
             cajero.Denominaciones.ForEach(e => e[1] += 3); //Nada más le agrego a las denominaciones para hacer pruebas
+            //Inicializando las cantidades por denominación al forms
             txt1peso.Text = cajero.Denominaciones[0][1].ToString();
             txt2pesos.Text = cajero.Denominaciones[1][1].ToString();
             txt5pesos.Text = cajero.Denominaciones[2][1].ToString();
@@ -34,64 +65,8 @@ namespace CajeroForms
             txt100pesos.Text = cajero.Denominaciones[6][1].ToString();
             txt200pesos.Text = cajero.Denominaciones[7][1].ToString();
             txt500pesos.Text = cajero.Denominaciones[8][1].ToString();
-        }
 
-        private void imgCoca_Click(object sender, EventArgs e)
-        {
-            total += 13;
-            labelTotal.Text = $"Total: {total}$";
-        }
-
-        private void imgSprite_Click(object sender, EventArgs e)
-        {
-            total += 11;
-            labelTotal.Text = $"Total: {total}$";
-        }
-
-        private void imgDrPepper_Click(object sender, EventArgs e)
-        {
-            total += 12;
-            labelTotal.Text = $"Total: {total}$";
-        }
-
-        private void btnPedir_Click(object sender, EventArgs e)
-        {
-            if (introducido - total > 0)
-            {
-                try {
-                    cambio = cajero.ReturnChange(cajero.Denominaciones, introducido - total);
-
-                    txt1peso.Text = cajero.Denominaciones[0][1].ToString();
-                    txt2pesos.Text = cajero.Denominaciones[1][1].ToString();
-                    txt5pesos.Text = cajero.Denominaciones[2][1].ToString();
-                    txt10pesos.Text = cajero.Denominaciones[3][1].ToString();
-                    txt20pesos.Text = cajero.Denominaciones[4][1].ToString();
-                    txt50pesos.Text = cajero.Denominaciones[5][1].ToString();
-                    txt100pesos.Text = cajero.Denominaciones[6][1].ToString();
-                    txt200pesos.Text = cajero.Denominaciones[7][1].ToString();
-                    txt500pesos.Text = cajero.Denominaciones[8][1].ToString();
-
-                    labelPantalla.Text = $"Compra realizada de manera correcta. Cambio: {introducido - total}$";
-
-                    string data = string.Join(" pesos, ", cambio);
-                    data += " pesos";
-                    labelMonedero.Text = $"Monedas y billetes: {data}";
-
-                    total = 0;
-                    introducido = 0;
-                    labelIntroducido.Text = $"Introducido: {introducido}$";
-                    labelTotal.Text = $"Total: {total}$";
-
-                } catch (Exception error) {
-                    labelPantalla.Text = error.Message;
-                }
-
-            }
-            else
-            {
-                labelPantalla.Text = "Lo introducido es menor al total";
-            }
-            
+            LoadContent();
         }
 
         private void btn1p_Click(object sender, EventArgs e)
@@ -100,6 +75,8 @@ namespace CajeroForms
             labelIntroducido.Text = $"Introducido: {introducido}$";
             cajero.Denominaciones[0][1] += 1;
 
+            moneyManager.AddDinero(1);
+            labelDineroTotal.Text = moneyManager.DineroTotal.ToString();
             txt1peso.Text = cajero.Denominaciones[0][1].ToString();
         }
 
@@ -109,6 +86,8 @@ namespace CajeroForms
             labelIntroducido.Text = $"Introducido: {introducido}$";
             cajero.Denominaciones[1][1] += 1;
 
+            moneyManager.AddDinero(2);
+            labelDineroTotal.Text = moneyManager.DineroTotal.ToString();
             txt2pesos.Text = cajero.Denominaciones[1][1].ToString();
         }
 
@@ -118,6 +97,8 @@ namespace CajeroForms
             labelIntroducido.Text = $"Introducido: {introducido}$";
             cajero.Denominaciones[2][1] += 1;
 
+            moneyManager.AddDinero(5);
+            labelDineroTotal.Text = moneyManager.DineroTotal.ToString();
             txt5pesos.Text = cajero.Denominaciones[2][1].ToString();
         }
 
@@ -127,6 +108,8 @@ namespace CajeroForms
             labelIntroducido.Text = $"Introducido: {introducido}$";
             cajero.Denominaciones[3][1] += 1;
 
+            moneyManager.AddDinero(10);
+            labelDineroTotal.Text = moneyManager.DineroTotal.ToString();
             txt10pesos.Text = cajero.Denominaciones[3][1].ToString();
         }
 
@@ -136,6 +119,8 @@ namespace CajeroForms
             labelIntroducido.Text = $"Introducido: {introducido}$";
             cajero.Denominaciones[4][1] += 1;
 
+            moneyManager.AddDinero(20);
+            labelDineroTotal.Text = moneyManager.DineroTotal.ToString();
             txt20pesos.Text = cajero.Denominaciones[4][1].ToString();
         }
 
@@ -145,6 +130,8 @@ namespace CajeroForms
             labelIntroducido.Text = $"Introducido: {introducido}$";
             cajero.Denominaciones[5][1] += 1;
 
+            moneyManager.AddDinero(50);
+            labelDineroTotal.Text = moneyManager.DineroTotal.ToString();
             txt50pesos.Text = cajero.Denominaciones[5][1].ToString();
         }
 
@@ -154,6 +141,8 @@ namespace CajeroForms
             labelIntroducido.Text = $"Introducido: {introducido}$";
             cajero.Denominaciones[6][1] += 1;
 
+            moneyManager.AddDinero(100);
+            labelDineroTotal.Text = moneyManager.DineroTotal.ToString();
             txt100pesos.Text = cajero.Denominaciones[6][1].ToString();
         }
 
@@ -163,6 +152,8 @@ namespace CajeroForms
             labelIntroducido.Text = $"Introducido: {introducido}$";
             cajero.Denominaciones[7][1] += 1;
 
+            moneyManager.AddDinero(200);
+            labelDineroTotal.Text = moneyManager.DineroTotal.ToString();
             txt200pesos.Text = cajero.Denominaciones[7][1].ToString();
         }
 
@@ -172,155 +163,202 @@ namespace CajeroForms
             labelIntroducido.Text = $"Introducido: {introducido}$";
             cajero.Denominaciones[8][1] += 1;
 
+            moneyManager.AddDinero(500);
+            labelDineroTotal.Text = moneyManager.DineroTotal.ToString();
             txt500pesos.Text = cajero.Denominaciones[8][1].ToString();
         }
-    
-    }
-    public class Cajero
-    {
-        private List<List<int>> denominaciones = new List<List<int>>()
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            //new List<int> { .10, 0 },
-            //new List<int> { .20, 0 },
-            //new List<int> { .50, 0 },
-            new List<int> { 1, 0 },
-            new List<int> { 2, 0 },
-            new List<int> { 5, 0 },
-            new List<int> { 10, 0 },
-            new List<int> { 20, 0 },
-            new List<int> { 50, 0 },
-            new List<int> { 100, 0 },
-            new List<int> { 200, 0 },
-            new List<int> { 500, 0 }
-        };
-
-        public List<List<int>> Denominaciones { get => denominaciones; set => denominaciones = value; }
-
-        public List<int> ReturnChange(List<List<int>> monedas, int cantidad)
-        {
-            BubbleSort(monedas);
-            int n = cantidad;
-            int cantidadTotal = 0;
-
-            for (int i = 0; i < monedas.Count; i++)
-            {
-                cantidadTotal = cantidadTotal + monedas[i][0] * monedas[i][1];
-            }
-
-            if (cantidad > cantidadTotal)
-            {
-
-                throw new Exception("Error, la cantidad de monedas no alcanza a cubrir la cantidad ingresada");
-
-            }
-            else if (cantidad < 0)
-            {
-
-                throw new Exception("Error, no se aceptan números negativos");
-
-            }
-
-            List<List<int>> matriz = new List<List<int>>();
-            List<int> fila1 = new List<int>() { 0 };
-
-            for (int i = 0; i < cantidad + 1; i++)
-            {
-                fila1.Add(i);
-            }
-            matriz.Add(fila1);
-
-            fila1 = new List<int>();
-
-            for (int i = 0; i < monedas.Count; i++)
-            {
-                for (int j = 0; j < cantidad + 2; j++)
-                {
-                    if (j == 0)
-                    {
-
-                        fila1.Add(monedas[i][0]);
-
-                    }
-                    else if (matriz[0][j] < monedas[i][0])
-                    {
-
-                        fila1.Add(matriz[i][j]);
-
-                    }
-                    else if (matriz[0][j] == monedas[i][0])
-                    {
-
-                        fila1.Add(1);
-
-                    }
-                    else if (matriz[0][j] > monedas[i][0])
-                    {
-                        int indexTemp = monedas[i][0] < 1 ? 1 : Convert.ToInt32(monedas[i][0]);
-
-                        fila1.Add(fila1[j - indexTemp] + 1);
-
-                    }
-                }
-
-                matriz.Add(fila1);
-                fila1 = new List<int>() { };
-            }
-
-            List<int> numeros = new List<int>();
-
-            while (n != 0 || n > 0)
-            {
-                List<List<int>> posiblesMonedas = new List<List<int>>() { };
-
-                for (int i = 1; i < monedas.Count + 1; i++)
-                {
-                    int indexTemp = Convert.ToInt32(n + 1);
-                    posiblesMonedas.Add(new List<int> { matriz[i][indexTemp], i });
-                }
-
-                BubbleSort(posiblesMonedas);
-
-                for (int i = 0; i < posiblesMonedas.Count; i++)
-                {
-                    int indexPosiblesMonedas = Convert.ToInt32(posiblesMonedas[i][1]);
-
-                    if (monedas[indexPosiblesMonedas - 1][1] > 0)
-                    {
-                        if ((n - matriz[indexPosiblesMonedas][0]) >= 0)
-                        {
-                            Console.WriteLine(matriz[indexPosiblesMonedas][0]);
-                            numeros.Add(matriz[indexPosiblesMonedas][0]);
-                            n = n - matriz[indexPosiblesMonedas][0];
-                            monedas[indexPosiblesMonedas - 1][1] = monedas[indexPosiblesMonedas - 1][1] - 1;
-                            break;
-                        }
-                        else if (monedas[indexPosiblesMonedas - 1][1] < 0)
-                        {
-
-                            throw new Exception("Error, no se puede retornar dicha cantidad, por falta de monedas");
-
-                        }
-                    }
-                }
-            }
-            return numeros;
+            txtInput.Text += "A";
         }
 
-        private void BubbleSort(List<List<int>> data)
+        private void button4_Click(object sender, EventArgs e)
         {
-            int n = data.Count;
-            for (int i = 0; i < n - 1; i++)
+            txtInput.Text += "B";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            txtInput.Text += "C";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            txtInput.Text += "D";
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            txtInput.Text += "E";
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            txtInput.Text += "F";
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            txtInput.Text += "1";
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            txtInput.Text += "2";
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            txtInput.Text += "3";
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            txtInput.Text += "4";
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            txtInput.Text += "5";
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            txtInput.Text += "6";
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            txtInput.Text += "7";
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            txtInput.Text += "8";
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            txtInput.Text += "9";
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            txtInput.Text += "0";
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (productoElegido != null)
             {
-                for (int j = 0; j < n - i - 1; j++)
+                if (introducido - total > 0)
                 {
-                    if (data[j][0] > data[j + 1][0])
+                    try
                     {
-                        List<int> aux = data[j];
-                        data[j] = data[j + 1];
-                        data[j + 1] = aux;
+                        cambio = cajero.ReturnChange(cajero.Denominaciones, introducido - total);
+
+                        txt1peso.Text = cajero.Denominaciones[0][1].ToString();
+                        txt2pesos.Text = cajero.Denominaciones[1][1].ToString();
+                        txt5pesos.Text = cajero.Denominaciones[2][1].ToString();
+                        txt10pesos.Text = cajero.Denominaciones[3][1].ToString();
+                        txt20pesos.Text = cajero.Denominaciones[4][1].ToString();
+                        txt50pesos.Text = cajero.Denominaciones[5][1].ToString();
+                        txt100pesos.Text = cajero.Denominaciones[6][1].ToString();
+                        txt200pesos.Text = cajero.Denominaciones[7][1].ToString();
+                        txt500pesos.Text = cajero.Denominaciones[8][1].ToString();
+
+                        labelPantalla.Text = $"Compra realizada de manera correcta. Cambio: {introducido - total}$";
+
+                        string data = string.Join(" pesos, ", cambio);
+                        data += " pesos";
+                        labelMonedero.Text = $"Monedas y billetes: {data}";
+
+                        total = 0;
+                        introducido = 0;
+                        labelIntroducido.Text = $"Introducido: {introducido}$";
+                        labelTotal.Text = $"Total: {total}$";
+
                     }
+                    catch (Exception error)
+                    {
+                        labelPantalla.Text = error.Message;
+                    }
+
+                    moneyManager.GetDineroTotal(cajero);
+                    labelDineroTotal.Text = moneyManager.DineroTotal.ToString();
+                    txtInput.Text = "";
                 }
+                else if(introducido - total == 0)
+                {
+                    labelPantalla.Text = "Gracias por su compra!!";
+                }
+                else
+                {
+                    labelPantalla.Text = "Lo introducido es menor al total";
+                }
+
+            } else {
+
+                labelPantalla.Text = "Sin producto a elegir";
+
             }
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            txtInput.Text += "";
+        }
+
+        private void txtInput_TextChanged(object sender, EventArgs e)
+        {
+            if(txtInput.TextLength == 3)
+            {
+                productoElegido = new Producto();
+                productoElegido = inventario.Productos.Find( element => element.Codigo == txtInput.Text );
+
+                total += productoElegido.Precio;
+                labelTotal.Text = $"Total: {total}$";
+
+                labelPantalla.Text = $"Usted ha elegido el producto: {productoElegido.Nombre}";
+            }
+        }
+
+        private void LoadContent()
+        {
+            LoadImages();
+
+            moneyManager.GetDineroTotal(cajero);
+            cajero._MoneyManager = moneyManager;
+
+            Producto coca = inventario.Productos[0];
+            Producto sprite = inventario.Productos[1];
+            Producto drPepper = inventario.Productos[2];
+
+            precioCoca.Text = $"Precio: {coca.Precio} pesos";
+            nombreCoca.Text = $"Nombre: {coca.Nombre}";
+            codigoCoca.Text = $"Código: {coca.Codigo}";
+            existenciaCoca.Text = $"Existencia: {coca.Existencia}";
+
+            precioSprite.Text = $"Precio: {sprite.Precio} pesos";
+            nombreSprite.Text = $"Nombre: {sprite.Nombre}";
+            codigoSprite.Text = $"Código: {sprite.Codigo}";
+            existenciaSprite.Text = $"Existencia: {sprite.Existencia}";
+
+            precioPepper.Text = $"Precio: {drPepper.Precio} pesos";
+            nombrePepper.Text = $"Nombre: {drPepper.Nombre}";
+            codigoPepper.Text = $"Código: {drPepper.Codigo}";
+            existenciaPepper.Text = $"Existencia: {drPepper.Existencia}";
+
+            labelDineroTotal.Text = moneyManager.DineroTotal.ToString();
+        }
+
+        private void LoadImages()
+        {
+            imgCoca.Load(inventario.Productos[0].Imagen);
+            imgSprite.Load(inventario.Productos[1].Imagen);
+            imgDrPepper.Load(inventario.Productos[2].Imagen);
+        }
+
     }
 }
