@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 
 namespace CajeroClases
 {
@@ -12,6 +13,7 @@ namespace CajeroClases
         MoneyManager moneyManager;
         Inventario inventario;
         DisplayControl displayControl;
+        Timer timer;
 
         public ControlCentral()
         {
@@ -22,6 +24,7 @@ namespace CajeroClases
             displayControl.Cajero = cajero;
             moneyManager.Cajero = cajero;
             moneyManager.Cajero.Denominaciones.ForEach(e => e[1] += 3);
+            timer = new Timer(1000);
         }
 
         public Cajero Cajero { get => cajero; set => cajero = value; }
@@ -88,6 +91,17 @@ namespace CajeroClases
                 displayControl.ChangeLabelTotalState($"Total: {moneyManager.DineroPorCobrar}$");
                 displayControl.ChangeLabelPantallaState($"Usted ha elegido el producto: {inventario.ProductoElegido.Nombre}");
             }
+        }
+
+        public void InitTimer()
+        {
+            timer.Elapsed += Timer_Elapsed;
+            timer.Start();
+        }
+
+        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            displayControl.ChangeTxtHoraState(DateTime.Now.ToString());
         }
     }
 }

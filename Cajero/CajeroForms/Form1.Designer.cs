@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelDineroTotal = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.txt50pesos = new System.Windows.Forms.TextBox();
             this.txt500pesos = new System.Windows.Forms.TextBox();
             this.txt200pesos = new System.Windows.Forms.TextBox();
@@ -102,8 +104,7 @@
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelDineroTotal = new System.Windows.Forms.Label();
+            this.txtHora = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -146,6 +147,24 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dinero en caja";
+            // 
+            // labelDineroTotal
+            // 
+            this.labelDineroTotal.AutoSize = true;
+            this.labelDineroTotal.Location = new System.Drawing.Point(220, 485);
+            this.labelDineroTotal.Name = "labelDineroTotal";
+            this.labelDineroTotal.Size = new System.Drawing.Size(23, 26);
+            this.labelDineroTotal.TabIndex = 46;
+            this.labelDineroTotal.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 485);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(205, 26);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Dinero total de la caja:";
             // 
             // txt50pesos
             // 
@@ -339,110 +358,119 @@
             // 
             // btn500b
             // 
-            this.btn500b.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn500b.ForeColor = System.Drawing.Color.Black;
-            this.btn500b.Location = new System.Drawing.Point(461, 516);
+            this.btn500b.BackColor = System.Drawing.Color.DarkViolet;
+            this.btn500b.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn500b.ForeColor = System.Drawing.Color.White;
+            this.btn500b.Location = new System.Drawing.Point(475, 506);
             this.btn500b.Name = "btn500b";
-            this.btn500b.Size = new System.Drawing.Size(94, 34);
+            this.btn500b.Size = new System.Drawing.Size(120, 45);
             this.btn500b.TabIndex = 39;
             this.btn500b.Text = "Billete 500";
-            this.btn500b.UseVisualStyleBackColor = true;
+            this.btn500b.UseVisualStyleBackColor = false;
             this.btn500b.Click += new System.EventHandler(this.btn500b_Click);
             // 
             // btn20b
             // 
-            this.btn20b.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn20b.ForeColor = System.Drawing.Color.Black;
-            this.btn20b.Location = new System.Drawing.Point(512, 461);
+            this.btn20b.BackColor = System.Drawing.Color.DarkViolet;
+            this.btn20b.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn20b.ForeColor = System.Drawing.Color.White;
+            this.btn20b.Location = new System.Drawing.Point(536, 450);
             this.btn20b.Name = "btn20b";
-            this.btn20b.Size = new System.Drawing.Size(94, 34);
+            this.btn20b.Size = new System.Drawing.Size(120, 45);
             this.btn20b.TabIndex = 38;
             this.btn20b.Text = "Billete 20";
-            this.btn20b.UseVisualStyleBackColor = true;
+            this.btn20b.UseVisualStyleBackColor = false;
             this.btn20b.Click += new System.EventHandler(this.btn20b_Click);
             // 
             // btn50b
             // 
-            this.btn50b.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn50b.ForeColor = System.Drawing.Color.Black;
-            this.btn50b.Location = new System.Drawing.Point(612, 461);
+            this.btn50b.BackColor = System.Drawing.Color.DarkViolet;
+            this.btn50b.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn50b.ForeColor = System.Drawing.Color.White;
+            this.btn50b.Location = new System.Drawing.Point(662, 450);
             this.btn50b.Name = "btn50b";
-            this.btn50b.Size = new System.Drawing.Size(94, 34);
+            this.btn50b.Size = new System.Drawing.Size(120, 45);
             this.btn50b.TabIndex = 36;
             this.btn50b.Text = "Billete 50";
-            this.btn50b.UseVisualStyleBackColor = true;
+            this.btn50b.UseVisualStyleBackColor = false;
             this.btn50b.Click += new System.EventHandler(this.btn50b_Click);
             // 
             // btn2p
             // 
-            this.btn2p.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn2p.ForeColor = System.Drawing.Color.Black;
-            this.btn2p.Location = new System.Drawing.Point(212, 461);
+            this.btn2p.BackColor = System.Drawing.Color.DarkViolet;
+            this.btn2p.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn2p.ForeColor = System.Drawing.Color.White;
+            this.btn2p.Location = new System.Drawing.Point(158, 450);
             this.btn2p.Name = "btn2p";
-            this.btn2p.Size = new System.Drawing.Size(94, 34);
+            this.btn2p.Size = new System.Drawing.Size(120, 45);
             this.btn2p.TabIndex = 33;
             this.btn2p.Text = "2 Pesos";
-            this.btn2p.UseVisualStyleBackColor = true;
+            this.btn2p.UseVisualStyleBackColor = false;
             this.btn2p.Click += new System.EventHandler(this.btn2p_Click);
             // 
             // btn200b
             // 
-            this.btn200b.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn200b.ForeColor = System.Drawing.Color.Black;
-            this.btn200b.Location = new System.Drawing.Point(361, 516);
+            this.btn200b.BackColor = System.Drawing.Color.DarkViolet;
+            this.btn200b.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn200b.ForeColor = System.Drawing.Color.White;
+            this.btn200b.Location = new System.Drawing.Point(350, 506);
             this.btn200b.Name = "btn200b";
-            this.btn200b.Size = new System.Drawing.Size(94, 34);
+            this.btn200b.Size = new System.Drawing.Size(120, 45);
             this.btn200b.TabIndex = 37;
             this.btn200b.Text = "Billete 200";
-            this.btn200b.UseVisualStyleBackColor = true;
+            this.btn200b.UseVisualStyleBackColor = false;
             this.btn200b.Click += new System.EventHandler(this.btn200b_Click);
             // 
             // btn1p
             // 
-            this.btn1p.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn1p.ForeColor = System.Drawing.Color.Black;
-            this.btn1p.Location = new System.Drawing.Point(112, 461);
+            this.btn1p.BackColor = System.Drawing.Color.DarkViolet;
+            this.btn1p.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn1p.ForeColor = System.Drawing.Color.White;
+            this.btn1p.Location = new System.Drawing.Point(32, 450);
             this.btn1p.Name = "btn1p";
-            this.btn1p.Size = new System.Drawing.Size(94, 34);
+            this.btn1p.Size = new System.Drawing.Size(120, 45);
             this.btn1p.TabIndex = 35;
             this.btn1p.Text = "1 Peso";
-            this.btn1p.UseVisualStyleBackColor = true;
+            this.btn1p.UseVisualStyleBackColor = false;
             this.btn1p.Click += new System.EventHandler(this.btn1p_Click);
             // 
             // btn100b
             // 
-            this.btn100b.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn100b.ForeColor = System.Drawing.Color.Black;
-            this.btn100b.Location = new System.Drawing.Point(261, 516);
+            this.btn100b.BackColor = System.Drawing.Color.DarkViolet;
+            this.btn100b.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn100b.ForeColor = System.Drawing.Color.White;
+            this.btn100b.Location = new System.Drawing.Point(224, 506);
             this.btn100b.Name = "btn100b";
-            this.btn100b.Size = new System.Drawing.Size(94, 34);
+            this.btn100b.Size = new System.Drawing.Size(120, 45);
             this.btn100b.TabIndex = 34;
             this.btn100b.Text = "Billete 100";
-            this.btn100b.UseVisualStyleBackColor = true;
+            this.btn100b.UseVisualStyleBackColor = false;
             this.btn100b.Click += new System.EventHandler(this.btn100b_Click);
             // 
             // btn5p
             // 
-            this.btn5p.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn5p.ForeColor = System.Drawing.Color.Black;
-            this.btn5p.Location = new System.Drawing.Point(312, 461);
+            this.btn5p.BackColor = System.Drawing.Color.DarkViolet;
+            this.btn5p.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn5p.ForeColor = System.Drawing.Color.White;
+            this.btn5p.Location = new System.Drawing.Point(284, 450);
             this.btn5p.Name = "btn5p";
-            this.btn5p.Size = new System.Drawing.Size(94, 34);
+            this.btn5p.Size = new System.Drawing.Size(120, 45);
             this.btn5p.TabIndex = 31;
             this.btn5p.Text = "5 Pesos";
-            this.btn5p.UseVisualStyleBackColor = true;
+            this.btn5p.UseVisualStyleBackColor = false;
             this.btn5p.Click += new System.EventHandler(this.btn5p_Click);
             // 
             // btn10p
             // 
-            this.btn10p.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn10p.ForeColor = System.Drawing.Color.Black;
-            this.btn10p.Location = new System.Drawing.Point(412, 461);
+            this.btn10p.BackColor = System.Drawing.Color.DarkViolet;
+            this.btn10p.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn10p.ForeColor = System.Drawing.Color.White;
+            this.btn10p.Location = new System.Drawing.Point(410, 450);
             this.btn10p.Name = "btn10p";
-            this.btn10p.Size = new System.Drawing.Size(94, 34);
+            this.btn10p.Size = new System.Drawing.Size(120, 45);
             this.btn10p.TabIndex = 29;
             this.btn10p.Text = "10 Pesos";
-            this.btn10p.UseVisualStyleBackColor = true;
+            this.btn10p.UseVisualStyleBackColor = false;
             this.btn10p.Click += new System.EventHandler(this.btn10p_Click);
             // 
             // labelIntroducido
@@ -949,23 +977,16 @@
             this.button18.UseVisualStyleBackColor = false;
             this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
-            // label1
+            // txtHora
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 485);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 26);
-            this.label1.TabIndex = 45;
-            this.label1.Text = "Dinero total de la caja:";
-            // 
-            // labelDineroTotal
-            // 
-            this.labelDineroTotal.AutoSize = true;
-            this.labelDineroTotal.Location = new System.Drawing.Point(220, 485);
-            this.labelDineroTotal.Name = "labelDineroTotal";
-            this.labelDineroTotal.Size = new System.Drawing.Size(23, 26);
-            this.labelDineroTotal.TabIndex = 46;
-            this.labelDineroTotal.Text = "0";
+            this.txtHora.BackColor = System.Drawing.Color.Indigo;
+            this.txtHora.Font = new System.Drawing.Font("Nunito", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHora.ForeColor = System.Drawing.Color.White;
+            this.txtHora.Location = new System.Drawing.Point(1426, 678);
+            this.txtHora.Name = "txtHora";
+            this.txtHora.Size = new System.Drawing.Size(285, 33);
+            this.txtHora.TabIndex = 45;
+            this.txtHora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Form1
             // 
@@ -973,6 +994,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Indigo;
             this.ClientSize = new System.Drawing.Size(1734, 745);
+            this.Controls.Add(this.txtHora);
             this.Controls.Add(this.button18);
             this.Controls.Add(this.button17);
             this.Controls.Add(this.button16);
@@ -1098,6 +1120,7 @@
         private System.Windows.Forms.Label existenciaCoca;
         private System.Windows.Forms.Label labelDineroTotal;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtHora;
     }
 }
 

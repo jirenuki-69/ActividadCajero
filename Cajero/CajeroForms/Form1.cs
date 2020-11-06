@@ -17,12 +17,12 @@ namespace CajeroForms
 
         public Form1()
         {
-
+            Control.CheckForIllegalCrossThreadCalls = false;
             InitializeComponent();
 
             controlCentral.DisplayControl.InitializeDisplayControlTextBoxes(
                 txtInput, txt1peso, txt2pesos, txt5pesos, txt10pesos, txt20pesos, txt50pesos,
-                txt100pesos, txt200pesos, txt500pesos
+                txt100pesos, txt200pesos, txt500pesos, txtHora
             );
 
             controlCentral.DisplayControl.InitializeDisplayControlLabels(
@@ -32,6 +32,8 @@ namespace CajeroForms
             controlCentral.DisplayControl.RefreshTxtDenominations();
 
             LoadContent();
+
+            controlCentral.InitTimer();
         }
 
         private void btn1p_Click(object sender, EventArgs e)
@@ -40,7 +42,7 @@ namespace CajeroForms
             controlCentral.DisplayControl.ChangeLabelIntroducidoState($"Introducido: {controlCentral.MoneyManager.DineroIntroducido}$");
             controlCentral.Cajero.AddDenomination("1");
 
-            labelDineroTotal.Text = controlCentral.MoneyManager.DineroTotal.ToString();
+            controlCentral.DisplayControl.ChangeLabelDineroTotalState(controlCentral.MoneyManager.DineroTotal.ToString());
             controlCentral.DisplayControl.RefreshCertainDenomination("1");
         }
 
@@ -48,9 +50,9 @@ namespace CajeroForms
         {
             controlCentral.MoneyManager.AddDinero(2);
             controlCentral.DisplayControl.ChangeLabelIntroducidoState($"Introducido: {controlCentral.MoneyManager.DineroIntroducido}$");
-            controlCentral.Cajero.AddDenomination("2"); ;
+            controlCentral.Cajero.AddDenomination("2");
 
-            labelDineroTotal.Text = controlCentral.MoneyManager.DineroTotal.ToString();
+            controlCentral.DisplayControl.ChangeLabelDineroTotalState(controlCentral.MoneyManager.DineroTotal.ToString());
             controlCentral.DisplayControl.RefreshCertainDenomination("2");
         }
 
@@ -60,7 +62,7 @@ namespace CajeroForms
             controlCentral.DisplayControl.ChangeLabelIntroducidoState($"Introducido: {controlCentral.MoneyManager.DineroIntroducido}$");
             controlCentral.Cajero.AddDenomination("5");
 
-            labelDineroTotal.Text = controlCentral.MoneyManager.DineroTotal.ToString();
+            controlCentral.DisplayControl.ChangeLabelDineroTotalState(controlCentral.MoneyManager.DineroTotal.ToString());
             controlCentral.DisplayControl.RefreshCertainDenomination("5");
         }
 
@@ -70,7 +72,7 @@ namespace CajeroForms
             controlCentral.DisplayControl.ChangeLabelIntroducidoState($"Introducido: {controlCentral.MoneyManager.DineroIntroducido}$"); ;
             controlCentral.Cajero.AddDenomination("10");
 
-            labelDineroTotal.Text = controlCentral.MoneyManager.DineroTotal.ToString();
+            controlCentral.DisplayControl.ChangeLabelDineroTotalState(controlCentral.MoneyManager.DineroTotal.ToString());
             controlCentral.DisplayControl.RefreshCertainDenomination("10");
         }
 
@@ -80,7 +82,7 @@ namespace CajeroForms
             controlCentral.DisplayControl.ChangeLabelIntroducidoState($"Introducido: {controlCentral.MoneyManager.DineroIntroducido}$");
             controlCentral.Cajero.AddDenomination("20");
 
-            labelDineroTotal.Text = controlCentral.MoneyManager.DineroTotal.ToString();
+            controlCentral.DisplayControl.ChangeLabelDineroTotalState(controlCentral.MoneyManager.DineroTotal.ToString());
             controlCentral.DisplayControl.RefreshCertainDenomination("20");
         }
 
@@ -90,7 +92,7 @@ namespace CajeroForms
             controlCentral.DisplayControl.ChangeLabelIntroducidoState($"Introducido: {controlCentral.MoneyManager.DineroIntroducido}$");
             controlCentral.Cajero.AddDenomination("50");
 
-            labelDineroTotal.Text = controlCentral.MoneyManager.DineroTotal.ToString();
+            controlCentral.DisplayControl.ChangeLabelDineroTotalState(controlCentral.MoneyManager.DineroTotal.ToString());
             controlCentral.DisplayControl.RefreshCertainDenomination("50");
         }
 
@@ -100,7 +102,7 @@ namespace CajeroForms
             controlCentral.DisplayControl.ChangeLabelIntroducidoState($"Introducido: {controlCentral.MoneyManager.DineroIntroducido}$");
             controlCentral.Cajero.AddDenomination("100");
 
-            labelDineroTotal.Text = controlCentral.MoneyManager.DineroTotal.ToString();
+            controlCentral.DisplayControl.ChangeLabelDineroTotalState(controlCentral.MoneyManager.DineroTotal.ToString());
             controlCentral.DisplayControl.RefreshCertainDenomination("100");
         }
 
@@ -110,7 +112,7 @@ namespace CajeroForms
             controlCentral.DisplayControl.ChangeLabelIntroducidoState($"Introducido: {controlCentral.MoneyManager.DineroIntroducido}$");
             controlCentral.Cajero.AddDenomination("200");
 
-            labelDineroTotal.Text = controlCentral.MoneyManager.DineroTotal.ToString();
+            controlCentral.DisplayControl.ChangeLabelDineroTotalState(controlCentral.MoneyManager.DineroTotal.ToString());
             controlCentral.DisplayControl.RefreshCertainDenomination("200");
         }
 
@@ -120,7 +122,7 @@ namespace CajeroForms
             controlCentral.DisplayControl.ChangeLabelIntroducidoState($"Introducido: {controlCentral.MoneyManager.DineroIntroducido}$");
             controlCentral.Cajero.AddDenomination("500");
 
-            labelDineroTotal.Text = controlCentral.MoneyManager.DineroTotal.ToString();
+            controlCentral.DisplayControl.ChangeLabelDineroTotalState(controlCentral.MoneyManager.DineroTotal.ToString());
             controlCentral.DisplayControl.RefreshCertainDenomination("500");
         }
 
@@ -253,6 +255,5 @@ namespace CajeroForms
             imgSprite.Load(controlCentral.Inventario.Productos[1].Imagen);
             imgDrPepper.Load(controlCentral.Inventario.Productos[2].Imagen);
         }
-
     }
 }

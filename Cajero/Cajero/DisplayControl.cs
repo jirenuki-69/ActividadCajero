@@ -9,7 +9,7 @@ namespace CajeroClases
 {
     public class DisplayControl
     {
-        TextBox txtDisplay, txt1p, txt2p, txt5p, txt10p, txt20p, txt50p, txt100p, txt200p, txt500p;
+        TextBox txtDisplay, txt1p, txt2p, txt5p, txt10p, txt20p, txt50p, txt100p, txt200p, txt500p, txtHora;
         Label labelPantalla, labelDineroTotal, labelMonedero, labelIntroducido, labelTotal;
         Cajero cajero = new Cajero();
 
@@ -28,6 +28,7 @@ namespace CajeroClases
             txt100p = otherTextBoxes[7];
             txt200p = otherTextBoxes[8];
             txt500p = otherTextBoxes[9];
+            txtHora = otherTextBoxes[10];
         }
 
         public void InitializeDisplayControlLabels(params Label[] otherLabels)
@@ -120,5 +121,10 @@ namespace CajeroClases
         {
             txtDisplay.Text += buttonText;
         }    
+
+        public void ChangeTxtHoraState(string text)
+        {
+            txtHora.Text = text;
+        }
     }
 }
