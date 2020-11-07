@@ -14,8 +14,9 @@ namespace CajeroClases
         MoneyManager moneyManager;
         Inventario inventario;
         DisplayControl displayControl;
+        InputControl inputControl;
         DBManager dbManager;
-        Timer timer;
+        Timer timer, timerProducto;
 
         public ControlCentral()
         {
@@ -23,12 +24,19 @@ namespace CajeroClases
             moneyManager = new MoneyManager();
             inventario = new Inventario();
             displayControl = new DisplayControl();
+            inputControl = new InputControl();
             dbManager = new DBManager();
-            displayControl.Cajero = cajero;
-            moneyManager.Cajero = cajero;
+            inputControl.DisplayControl = this.displayControl;
+            moneyManager.DisplayControl = this.displayControl;
+            displayControl.Cajero = this.cajero;
+            moneyManager.Cajero = this.cajero;
             moneyManager.Cajero.Denominaciones.ForEach(e => e[1] += 3);
+            moneyManager.Inventario = this.inventario;
             inventario.DBManager = this.dbManager;
+            displayControl.DBManagerData = this.inventario.DBManagerData;
+            displayControl.Inventario = this.inventario;
             timer = new Timer(1000);
+            timerProducto = new Timer(2000);
         }
 
         public Cajero Cajero { get => cajero; set => cajero = value; }
@@ -36,55 +44,28 @@ namespace CajeroClases
         public Inventario Inventario { get => inventario; set => inventario = value; }
         public DisplayControl DisplayControl { get => displayControl; set => displayControl = value; }
         public DBManager DBManager { get => dbManager; set => dbManager = value; }
+        public InputControl InputControl { get => inputControl; set => inputControl = value; }
 
         public void GetChange()
         {
             if (inventario.ProductoElegido != null)
             {
-                if (moneyManager.DineroIntroducido - moneyManager.DineroPorCobrar > 0)
-                {
-                    try
-                    {
-                        List<int> cambio = cajero.ReturnChange(moneyManager.DineroIntroducido - moneyManager.DineroPorCobrar);
-
-                        displayControl.RefreshTxtDenominations();
-                        displayControl.ChangeLabelPantallaState($"Compra realizada de manera correcta. Cambio: {moneyManager.DineroIntroducido - moneyManager.DineroPorCobrar}");
-
-                        string data = string.Join(" pesos, ", cambio);
-                        data += " pesos";
-
-                        displayControl.ChangeLabelMonederoState($"Monedas y billetes: {data}");
-
-                        moneyManager.DineroIntroducido = 0;
-                        moneyManager.DineroPorCobrar = 0;
-
-                        displayControl.ChangeLabelIntroducidoState($"Introducido: {moneyManager.DineroIntroducido}$");
-                        displayControl.ChangeLabelTotalState($"Total: {moneyManager.DineroPorCobrar}$");
-                    }
-                    catch (Exception error)
-                    {
-                        displayControl.ChangeLabelPantallaState(error.Message);
-                    }
-
-                    moneyManager.GetDineroTotal();
-                    
-                    displayControl.ChangeLabelDineroTotalState(moneyManager.DineroTotal.ToString());
-                    displayControl.DisplayMessage("");
-                }
-                else if (moneyManager.DineroIntroducido - moneyManager.DineroPorCobrar == 0)
-                {
-                    displayControl.ChangeLabelPantallaState("Gracias por su compra!!");
-                }
-                else
-                {
-                    displayControl.ChangeLabelPantallaState("Lo introducido es menor al total");
-                }
-
-            } else {
+                moneyManager.ReturnChange();
+                timerProducto.Elapsed += TimerProducto_Elapsed;
+                timerProducto.Start();
+            } 
+            else 
+            {
                 displayControl.ChangeLabelPantallaState("Sin producto a elegir");
             }
         }
-    
+
+        private void TimerProducto_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            displayControl.ChangeLabelPantallaState("Retiro de producto");
+            timerProducto.Close();
+        }
+
         public void GetProduct()
         {
             if (displayControl.TxtDisplay.TextLength == 3)
@@ -115,6 +96,16 @@ namespace CajeroClases
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             displayControl.ChangeTxtHoraState(DateTime.Now.ToString());
+        }
+
+        public void ControlPaidProduct()
+        {
+            moneyManager.PaidProductEvent += MoneyManager_PaidProductEvent;
+        }
+
+        private void MoneyManager_PaidProductEvent()
+        {
+            displayControl.ChangeLabelPantallaState("Usted ya puede pagar el producto");
         }
     }
 }

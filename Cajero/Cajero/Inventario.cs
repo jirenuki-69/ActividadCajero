@@ -11,7 +11,7 @@ namespace CajeroClases
     {
         List<Producto> productos;
         List<List<string>> dbManagerData = new List<List<string>>();
-        Producto productoElegido = new Producto();
+        Producto productoElegido;
         DBManager dbManager = new DBManager();
 
         public List<Producto> Productos { get => productos; set => productos = value; }

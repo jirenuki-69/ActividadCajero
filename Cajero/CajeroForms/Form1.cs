@@ -30,11 +30,13 @@ namespace CajeroForms
                 labelPantalla, labelDineroTotal, labelMonedero, labelIntroducido, labelTotal
             );
 
+            controlCentral.DisplayControl.GetListView(listViewProductos);
+
             controlCentral.DisplayControl.RefreshTxtDenominations();
 
-            LoadContent();
-
             controlCentral.InitTimer();
+
+            controlCentral.ControlPaidProduct();
         }
 
         private void btn1p_Click(object sender, EventArgs e)
@@ -129,82 +131,82 @@ namespace CajeroForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            controlCentral.DisplayControl.ChangeTxtDisplayState("A");
+            controlCentral.InputControl.GetPressedButton("A");
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            controlCentral.DisplayControl.ChangeTxtDisplayState("B");
+            controlCentral.InputControl.GetPressedButton("B");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            controlCentral.DisplayControl.ChangeTxtDisplayState("C");
+            controlCentral.InputControl.GetPressedButton("C");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            controlCentral.DisplayControl.ChangeTxtDisplayState("D");
+            controlCentral.InputControl.GetPressedButton("D");
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            controlCentral.DisplayControl.ChangeTxtDisplayState("E");
+            controlCentral.InputControl.GetPressedButton("E");
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            controlCentral.DisplayControl.ChangeTxtDisplayState("F");
+            controlCentral.InputControl.GetPressedButton("F");
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            controlCentral.DisplayControl.ChangeTxtDisplayState("1");
+            controlCentral.InputControl.GetPressedButton("1");
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            controlCentral.DisplayControl.ChangeTxtDisplayState("2");
+            controlCentral.InputControl.GetPressedButton("2");
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            controlCentral.DisplayControl.ChangeTxtDisplayState("3");
+            controlCentral.InputControl.GetPressedButton("3");
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            controlCentral.DisplayControl.ChangeTxtDisplayState("4");
+            controlCentral.InputControl.GetPressedButton("4");
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            controlCentral.DisplayControl.ChangeTxtDisplayState("5");
+            controlCentral.InputControl.GetPressedButton("5");
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            controlCentral.DisplayControl.ChangeTxtDisplayState("6");
+            controlCentral.InputControl.GetPressedButton("6");
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            controlCentral.DisplayControl.ChangeTxtDisplayState("7");
+            controlCentral.InputControl.GetPressedButton("7");
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
-            controlCentral.DisplayControl.ChangeTxtDisplayState("8");
+            controlCentral.InputControl.GetPressedButton("8");
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
-            controlCentral.DisplayControl.ChangeTxtDisplayState("9");
+            controlCentral.InputControl.GetPressedButton("9");
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
-            controlCentral.DisplayControl.ChangeTxtDisplayState("0");
+            controlCentral.InputControl.GetPressedButton("0");
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -214,47 +216,12 @@ namespace CajeroForms
 
         private void button11_Click(object sender, EventArgs e)
         {
-            controlCentral.DisplayControl.DisplayMessage("");
+            controlCentral.InputControl.GetPressedButton("");
         }
 
         private void txtInput_TextChanged(object sender, EventArgs e)
         {
             controlCentral.GetProduct();
-        }
-
-        private void LoadContent()
-        {
-            LoadImages();
-
-            controlCentral.MoneyManager.GetDineroTotal();
-
-            Producto coca = controlCentral.Inventario.Productos[0];
-            Producto sprite = controlCentral.Inventario.Productos[1];
-            Producto drPepper = controlCentral.Inventario.Productos[2];
-
-            precioCoca.Text = $"Precio: {coca.Precio} pesos";
-            nombreCoca.Text = $"Nombre: {coca.Nombre}";
-            codigoCoca.Text = $"Código: {coca.Codigo}";
-            existenciaCoca.Text = $"Existencia: {coca.Existencia}";
-
-            precioSprite.Text = $"Precio: {sprite.Precio} pesos";
-            nombreSprite.Text = $"Nombre: {sprite.Nombre}";
-            codigoSprite.Text = $"Código: {sprite.Codigo}";
-            existenciaSprite.Text = $"Existencia: {sprite.Existencia}";
-
-            precioPepper.Text = $"Precio: {drPepper.Precio} pesos";
-            nombrePepper.Text = $"Nombre: {drPepper.Nombre}";
-            codigoPepper.Text = $"Código: {drPepper.Codigo}";
-            existenciaPepper.Text = $"Existencia: {drPepper.Existencia}";
-
-            labelDineroTotal.Text = controlCentral.MoneyManager.DineroTotal.ToString();
-        }
-
-        private void LoadImages()
-        {
-            imgCoca.Load(controlCentral.Inventario.Productos[0].Imagen);
-            imgSprite.Load(controlCentral.Inventario.Productos[1].Imagen);
-            imgDrPepper.Load(controlCentral.Inventario.Productos[2].Imagen);
         }
     }
 }

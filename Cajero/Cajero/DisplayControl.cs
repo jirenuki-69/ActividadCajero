@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace CajeroClases
 {
@@ -11,10 +12,15 @@ namespace CajeroClases
     {
         TextBox txtDisplay, txt1p, txt2p, txt5p, txt10p, txt20p, txt50p, txt100p, txt200p, txt500p, txtHora;
         Label labelPantalla, labelDineroTotal, labelMonedero, labelIntroducido, labelTotal;
+        ListView listViewProductos;
+        List<List<string>> dbManagerData;
         Cajero cajero = new Cajero();
+        Inventario inventario;
 
         public TextBox TxtDisplay { get => txtDisplay; set => txtDisplay = value; }
         public Cajero Cajero { set => cajero = value; }
+        public List<List<string>> DBManagerData { get => dbManagerData; set => dbManagerData = value; }
+        public Inventario Inventario { get => inventario; set => inventario = value; }
 
         public void InitializeDisplayControlTextBoxes(params TextBox[] otherTextBoxes)
         {
@@ -125,6 +131,28 @@ namespace CajeroClases
         public void ChangeTxtHoraState(string text)
         {
             txtHora.Text = text;
+        }
+
+        public void GetListView(ListView listView)
+        {
+            listViewProductos = listView;
+
+            listViewProductos.View = View.Details;
+
+            for (int i = 0; i < inventario.Productos.Count; ++i)
+            {
+                ListViewItem listViewItem = new ListViewItem(
+                    $"{inventario.Productos[i].Nombre}"
+                );
+
+                listViewItem.ImageIndex = i;
+
+                listViewItem.SubItems.Add($"{inventario.Productos[i].Precio}");
+                listViewItem.SubItems.Add($"{inventario.Productos[i].Existencia}");
+                listViewItem.SubItems.Add($"{inventario.Productos[i].Codigo}");
+
+                listViewProductos.Items.Add(listViewItem);
+            }
         }
     }
 }

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelDineroTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,25 +64,6 @@
             this.btn10p = new System.Windows.Forms.Button();
             this.labelIntroducido = new System.Windows.Forms.Label();
             this.labelTotal = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.existenciaSprite = new System.Windows.Forms.Label();
-            this.codigoSprite = new System.Windows.Forms.Label();
-            this.nombreSprite = new System.Windows.Forms.Label();
-            this.precioSprite = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.existenciaPepper = new System.Windows.Forms.Label();
-            this.codigoPepper = new System.Windows.Forms.Label();
-            this.nombrePepper = new System.Windows.Forms.Label();
-            this.precioPepper = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.existenciaCoca = new System.Windows.Forms.Label();
-            this.codigoCoca = new System.Windows.Forms.Label();
-            this.nombreCoca = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.precioCoca = new System.Windows.Forms.Label();
-            this.imgDrPepper = new System.Windows.Forms.PictureBox();
-            this.imgSprite = new System.Windows.Forms.PictureBox();
-            this.imgCoca = new System.Windows.Forms.PictureBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.labelPantalla = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -105,14 +88,14 @@
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.txtHora = new System.Windows.Forms.TextBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listViewProductos = new System.Windows.Forms.ListView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgDrPepper)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgSprite)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCoca)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
@@ -330,6 +313,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.listViewProductos);
             this.groupBox2.Controls.Add(this.btn500b);
             this.groupBox2.Controls.Add(this.btn20b);
             this.groupBox2.Controls.Add(this.btn50b);
@@ -341,12 +325,6 @@
             this.groupBox2.Controls.Add(this.btn10p);
             this.groupBox2.Controls.Add(this.labelIntroducido);
             this.groupBox2.Controls.Add(this.labelTotal);
-            this.groupBox2.Controls.Add(this.groupBox4);
-            this.groupBox2.Controls.Add(this.groupBox5);
-            this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Controls.Add(this.imgDrPepper);
-            this.groupBox2.Controls.Add(this.imgSprite);
-            this.groupBox2.Controls.Add(this.imgCoca);
             this.groupBox2.Font = new System.Drawing.Font("Nunito SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(603, 27);
@@ -491,190 +469,6 @@
             this.labelTotal.TabIndex = 27;
             this.labelTotal.Text = "Total: 0.00$";
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.existenciaSprite);
-            this.groupBox4.Controls.Add(this.codigoSprite);
-            this.groupBox4.Controls.Add(this.nombreSprite);
-            this.groupBox4.Controls.Add(this.precioSprite);
-            this.groupBox4.Font = new System.Drawing.Font("Nunito SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.ForeColor = System.Drawing.Color.GhostWhite;
-            this.groupBox4.Location = new System.Drawing.Point(198, 161);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(584, 100);
-            this.groupBox4.TabIndex = 25;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Información Producto";
-            // 
-            // existenciaSprite
-            // 
-            this.existenciaSprite.AutoSize = true;
-            this.existenciaSprite.Location = new System.Drawing.Point(270, 56);
-            this.existenciaSprite.Name = "existenciaSprite";
-            this.existenciaSprite.Size = new System.Drawing.Size(0, 21);
-            this.existenciaSprite.TabIndex = 5;
-            // 
-            // codigoSprite
-            // 
-            this.codigoSprite.AutoSize = true;
-            this.codigoSprite.Location = new System.Drawing.Point(270, 35);
-            this.codigoSprite.Name = "codigoSprite";
-            this.codigoSprite.Size = new System.Drawing.Size(0, 21);
-            this.codigoSprite.TabIndex = 4;
-            // 
-            // nombreSprite
-            // 
-            this.nombreSprite.AutoSize = true;
-            this.nombreSprite.Location = new System.Drawing.Point(6, 56);
-            this.nombreSprite.Name = "nombreSprite";
-            this.nombreSprite.Size = new System.Drawing.Size(0, 21);
-            this.nombreSprite.TabIndex = 3;
-            // 
-            // precioSprite
-            // 
-            this.precioSprite.AutoSize = true;
-            this.precioSprite.Location = new System.Drawing.Point(6, 35);
-            this.precioSprite.Name = "precioSprite";
-            this.precioSprite.Size = new System.Drawing.Size(0, 21);
-            this.precioSprite.TabIndex = 2;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.existenciaPepper);
-            this.groupBox5.Controls.Add(this.codigoPepper);
-            this.groupBox5.Controls.Add(this.nombrePepper);
-            this.groupBox5.Controls.Add(this.precioPepper);
-            this.groupBox5.Font = new System.Drawing.Font("Nunito SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.ForeColor = System.Drawing.Color.GhostWhite;
-            this.groupBox5.Location = new System.Drawing.Point(198, 288);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(584, 100);
-            this.groupBox5.TabIndex = 25;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Información Producto";
-            // 
-            // existenciaPepper
-            // 
-            this.existenciaPepper.AutoSize = true;
-            this.existenciaPepper.Location = new System.Drawing.Point(270, 57);
-            this.existenciaPepper.Name = "existenciaPepper";
-            this.existenciaPepper.Size = new System.Drawing.Size(0, 21);
-            this.existenciaPepper.TabIndex = 6;
-            // 
-            // codigoPepper
-            // 
-            this.codigoPepper.AutoSize = true;
-            this.codigoPepper.Font = new System.Drawing.Font("Nunito SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codigoPepper.Location = new System.Drawing.Point(270, 36);
-            this.codigoPepper.Name = "codigoPepper";
-            this.codigoPepper.Size = new System.Drawing.Size(0, 21);
-            this.codigoPepper.TabIndex = 5;
-            // 
-            // nombrePepper
-            // 
-            this.nombrePepper.AutoSize = true;
-            this.nombrePepper.Font = new System.Drawing.Font("Nunito SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombrePepper.Location = new System.Drawing.Point(6, 57);
-            this.nombrePepper.Name = "nombrePepper";
-            this.nombrePepper.Size = new System.Drawing.Size(0, 21);
-            this.nombrePepper.TabIndex = 4;
-            // 
-            // precioPepper
-            // 
-            this.precioPepper.AutoSize = true;
-            this.precioPepper.Font = new System.Drawing.Font("Nunito SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.precioPepper.Location = new System.Drawing.Point(6, 36);
-            this.precioPepper.Name = "precioPepper";
-            this.precioPepper.Size = new System.Drawing.Size(0, 21);
-            this.precioPepper.TabIndex = 3;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.existenciaCoca);
-            this.groupBox3.Controls.Add(this.codigoCoca);
-            this.groupBox3.Controls.Add(this.nombreCoca);
-            this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Controls.Add(this.precioCoca);
-            this.groupBox3.Font = new System.Drawing.Font("Nunito SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(198, 42);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(584, 100);
-            this.groupBox3.TabIndex = 24;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Información Producto";
-            // 
-            // existenciaCoca
-            // 
-            this.existenciaCoca.AutoSize = true;
-            this.existenciaCoca.Location = new System.Drawing.Point(269, 58);
-            this.existenciaCoca.Name = "existenciaCoca";
-            this.existenciaCoca.Size = new System.Drawing.Size(0, 21);
-            this.existenciaCoca.TabIndex = 4;
-            // 
-            // codigoCoca
-            // 
-            this.codigoCoca.AutoSize = true;
-            this.codigoCoca.Location = new System.Drawing.Point(270, 37);
-            this.codigoCoca.Name = "codigoCoca";
-            this.codigoCoca.Size = new System.Drawing.Size(0, 21);
-            this.codigoCoca.TabIndex = 3;
-            // 
-            // nombreCoca
-            // 
-            this.nombreCoca.AutoSize = true;
-            this.nombreCoca.ForeColor = System.Drawing.Color.White;
-            this.nombreCoca.Location = new System.Drawing.Point(6, 58);
-            this.nombreCoca.Name = "nombreCoca";
-            this.nombreCoca.Size = new System.Drawing.Size(0, 21);
-            this.nombreCoca.TabIndex = 2;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 71);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(0, 21);
-            this.label14.TabIndex = 1;
-            // 
-            // precioCoca
-            // 
-            this.precioCoca.AutoSize = true;
-            this.precioCoca.Location = new System.Drawing.Point(6, 37);
-            this.precioCoca.Name = "precioCoca";
-            this.precioCoca.Size = new System.Drawing.Size(0, 21);
-            this.precioCoca.TabIndex = 0;
-            // 
-            // imgDrPepper
-            // 
-            this.imgDrPepper.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgDrPepper.Location = new System.Drawing.Point(32, 292);
-            this.imgDrPepper.Name = "imgDrPepper";
-            this.imgDrPepper.Size = new System.Drawing.Size(142, 101);
-            this.imgDrPepper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgDrPepper.TabIndex = 26;
-            this.imgDrPepper.TabStop = false;
-            // 
-            // imgSprite
-            // 
-            this.imgSprite.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgSprite.Location = new System.Drawing.Point(32, 169);
-            this.imgSprite.Name = "imgSprite";
-            this.imgSprite.Size = new System.Drawing.Size(142, 101);
-            this.imgSprite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgSprite.TabIndex = 25;
-            this.imgSprite.TabStop = false;
-            // 
-            // imgCoca
-            // 
-            this.imgCoca.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgCoca.Location = new System.Drawing.Point(32, 47);
-            this.imgCoca.Name = "imgCoca";
-            this.imgCoca.Size = new System.Drawing.Size(142, 101);
-            this.imgCoca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgCoca.TabIndex = 24;
-            this.imgCoca.TabStop = false;
-            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.labelPantalla);
@@ -724,6 +518,7 @@
             this.txtInput.ForeColor = System.Drawing.Color.White;
             this.txtInput.Location = new System.Drawing.Point(1426, 37);
             this.txtInput.Name = "txtInput";
+            this.txtInput.ReadOnly = true;
             this.txtInput.Size = new System.Drawing.Size(285, 138);
             this.txtInput.TabIndex = 26;
             this.txtInput.TextChanged += new System.EventHandler(this.txtInput_TextChanged);
@@ -973,6 +768,58 @@
             this.txtHora.TabIndex = 45;
             this.txtHora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "1.png");
+            this.imageList1.Images.SetKeyName(1, "2.png");
+            this.imageList1.Images.SetKeyName(2, "3.png");
+            this.imageList1.Images.SetKeyName(3, "4.jpg");
+            this.imageList1.Images.SetKeyName(4, "5.png");
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Nombre";
+            this.columnHeader1.Width = 187;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Precio";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 187;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Existencia";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader3.Width = 187;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Código";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader4.Width = 187;
+            // 
+            // listViewProductos
+            // 
+            this.listViewProductos.BackColor = System.Drawing.Color.Indigo;
+            this.listViewProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listViewProductos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listViewProductos.ForeColor = System.Drawing.Color.White;
+            this.listViewProductos.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listViewProductos.HideSelection = false;
+            this.listViewProductos.Location = new System.Drawing.Point(32, 46);
+            this.listViewProductos.Name = "listViewProductos";
+            this.listViewProductos.Size = new System.Drawing.Size(750, 353);
+            this.listViewProductos.SmallImageList = this.imageList1;
+            this.listViewProductos.TabIndex = 46;
+            this.listViewProductos.UseCompatibleStateImageBehavior = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1009,15 +856,6 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgDrPepper)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgSprite)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCoca)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
@@ -1050,19 +888,6 @@
         private System.Windows.Forms.Label label4;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.PictureBox imgCoca;
-        private System.Windows.Forms.PictureBox imgSprite;
-        private System.Windows.Forms.PictureBox imgDrPepper;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label nombreSprite;
-        private System.Windows.Forms.Label precioSprite;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label nombrePepper;
-        private System.Windows.Forms.Label precioPepper;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label nombreCoca;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label precioCoca;
         private System.Windows.Forms.Button btn500b;
         private System.Windows.Forms.Button btn20b;
         private System.Windows.Forms.Button btn50b;
@@ -1097,15 +922,15 @@
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Label codigoSprite;
-        private System.Windows.Forms.Label codigoPepper;
-        private System.Windows.Forms.Label codigoCoca;
-        private System.Windows.Forms.Label existenciaSprite;
-        private System.Windows.Forms.Label existenciaPepper;
-        private System.Windows.Forms.Label existenciaCoca;
         private System.Windows.Forms.Label labelDineroTotal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtHora;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ListView listViewProductos;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
 
