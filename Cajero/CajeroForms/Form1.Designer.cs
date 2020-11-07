@@ -354,7 +354,7 @@
             this.groupBox2.Size = new System.Drawing.Size(805, 568);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Interacción con el cajero";
+            this.groupBox2.Text = "Productos e inserción de monedas";
             // 
             // btn500b
             // 
@@ -511,36 +511,32 @@
             this.existenciaSprite.AutoSize = true;
             this.existenciaSprite.Location = new System.Drawing.Point(270, 56);
             this.existenciaSprite.Name = "existenciaSprite";
-            this.existenciaSprite.Size = new System.Drawing.Size(87, 21);
+            this.existenciaSprite.Size = new System.Drawing.Size(0, 21);
             this.existenciaSprite.TabIndex = 5;
-            this.existenciaSprite.Text = "Existencia:";
             // 
             // codigoSprite
             // 
             this.codigoSprite.AutoSize = true;
             this.codigoSprite.Location = new System.Drawing.Point(270, 35);
             this.codigoSprite.Name = "codigoSprite";
-            this.codigoSprite.Size = new System.Drawing.Size(101, 21);
+            this.codigoSprite.Size = new System.Drawing.Size(0, 21);
             this.codigoSprite.TabIndex = 4;
-            this.codigoSprite.Text = "Código: B03";
             // 
             // nombreSprite
             // 
             this.nombreSprite.AutoSize = true;
             this.nombreSprite.Location = new System.Drawing.Point(6, 56);
             this.nombreSprite.Name = "nombreSprite";
-            this.nombreSprite.Size = new System.Drawing.Size(172, 21);
+            this.nombreSprite.Size = new System.Drawing.Size(0, 21);
             this.nombreSprite.TabIndex = 3;
-            this.nombreSprite.Text = "Nombre: Sprite de lata";
             // 
             // precioSprite
             // 
             this.precioSprite.AutoSize = true;
             this.precioSprite.Location = new System.Drawing.Point(6, 35);
             this.precioSprite.Name = "precioSprite";
-            this.precioSprite.Size = new System.Drawing.Size(129, 21);
+            this.precioSprite.Size = new System.Drawing.Size(0, 21);
             this.precioSprite.TabIndex = 2;
-            this.precioSprite.Text = "Precio: 11 pesos";
             // 
             // groupBox5
             // 
@@ -562,9 +558,8 @@
             this.existenciaPepper.AutoSize = true;
             this.existenciaPepper.Location = new System.Drawing.Point(270, 57);
             this.existenciaPepper.Name = "existenciaPepper";
-            this.existenciaPepper.Size = new System.Drawing.Size(87, 21);
+            this.existenciaPepper.Size = new System.Drawing.Size(0, 21);
             this.existenciaPepper.TabIndex = 6;
-            this.existenciaPepper.Text = "Existencia:";
             // 
             // codigoPepper
             // 
@@ -572,9 +567,8 @@
             this.codigoPepper.Font = new System.Drawing.Font("Nunito SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codigoPepper.Location = new System.Drawing.Point(270, 36);
             this.codigoPepper.Name = "codigoPepper";
-            this.codigoPepper.Size = new System.Drawing.Size(99, 21);
+            this.codigoPepper.Size = new System.Drawing.Size(0, 21);
             this.codigoPepper.TabIndex = 5;
-            this.codigoPepper.Text = "Código: F02";
             // 
             // nombrePepper
             // 
@@ -582,9 +576,8 @@
             this.nombrePepper.Font = new System.Drawing.Font("Nunito SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombrePepper.Location = new System.Drawing.Point(6, 57);
             this.nombrePepper.Name = "nombrePepper";
-            this.nombrePepper.Size = new System.Drawing.Size(215, 21);
+            this.nombrePepper.Size = new System.Drawing.Size(0, 21);
             this.nombrePepper.TabIndex = 4;
-            this.nombrePepper.Text = "Nombre: Refresco Dr Pepper";
             // 
             // precioPepper
             // 
@@ -592,9 +585,8 @@
             this.precioPepper.Font = new System.Drawing.Font("Nunito SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.precioPepper.Location = new System.Drawing.Point(6, 36);
             this.precioPepper.Name = "precioPepper";
-            this.precioPepper.Size = new System.Drawing.Size(129, 21);
+            this.precioPepper.Size = new System.Drawing.Size(0, 21);
             this.precioPepper.TabIndex = 3;
-            this.precioPepper.Text = "Precio: 12 pesos";
             // 
             // groupBox3
             // 
@@ -617,18 +609,16 @@
             this.existenciaCoca.AutoSize = true;
             this.existenciaCoca.Location = new System.Drawing.Point(269, 58);
             this.existenciaCoca.Name = "existenciaCoca";
-            this.existenciaCoca.Size = new System.Drawing.Size(87, 21);
+            this.existenciaCoca.Size = new System.Drawing.Size(0, 21);
             this.existenciaCoca.TabIndex = 4;
-            this.existenciaCoca.Text = "Existencia:";
             // 
             // codigoCoca
             // 
             this.codigoCoca.AutoSize = true;
             this.codigoCoca.Location = new System.Drawing.Point(270, 37);
             this.codigoCoca.Name = "codigoCoca";
-            this.codigoCoca.Size = new System.Drawing.Size(102, 21);
+            this.codigoCoca.Size = new System.Drawing.Size(0, 21);
             this.codigoCoca.TabIndex = 3;
-            this.codigoCoca.Text = "Código: A01";
             // 
             // nombreCoca
             // 
@@ -636,9 +626,8 @@
             this.nombreCoca.ForeColor = System.Drawing.Color.White;
             this.nombreCoca.Location = new System.Drawing.Point(6, 58);
             this.nombreCoca.Name = "nombreCoca";
-            this.nombreCoca.Size = new System.Drawing.Size(200, 21);
+            this.nombreCoca.Size = new System.Drawing.Size(0, 21);
             this.nombreCoca.TabIndex = 2;
-            this.nombreCoca.Text = "Nombre: Coca cola de lata";
             // 
             // label14
             // 
@@ -653,15 +642,13 @@
             this.precioCoca.AutoSize = true;
             this.precioCoca.Location = new System.Drawing.Point(6, 37);
             this.precioCoca.Name = "precioCoca";
-            this.precioCoca.Size = new System.Drawing.Size(129, 21);
+            this.precioCoca.Size = new System.Drawing.Size(0, 21);
             this.precioCoca.TabIndex = 0;
-            this.precioCoca.Text = "Precio: 13 pesos";
             // 
             // imgDrPepper
             // 
             this.imgDrPepper.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgDrPepper.Image = global::CajeroForms.Properties.Resources.dr_pepper;
-            this.imgDrPepper.Location = new System.Drawing.Point(6, 287);
+            this.imgDrPepper.Location = new System.Drawing.Point(32, 292);
             this.imgDrPepper.Name = "imgDrPepper";
             this.imgDrPepper.Size = new System.Drawing.Size(142, 101);
             this.imgDrPepper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -671,8 +658,7 @@
             // imgSprite
             // 
             this.imgSprite.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgSprite.Image = global::CajeroForms.Properties.Resources.sprite_de_lata;
-            this.imgSprite.Location = new System.Drawing.Point(6, 164);
+            this.imgSprite.Location = new System.Drawing.Point(32, 169);
             this.imgSprite.Name = "imgSprite";
             this.imgSprite.Size = new System.Drawing.Size(142, 101);
             this.imgSprite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -682,8 +668,7 @@
             // imgCoca
             // 
             this.imgCoca.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgCoca.Image = global::CajeroForms.Properties.Resources.coca_de_lata;
-            this.imgCoca.Location = new System.Drawing.Point(6, 42);
+            this.imgCoca.Location = new System.Drawing.Point(32, 47);
             this.imgCoca.Name = "imgCoca";
             this.imgCoca.Size = new System.Drawing.Size(142, 101);
             this.imgCoca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -700,7 +685,7 @@
             this.groupBox6.Size = new System.Drawing.Size(521, 100);
             this.groupBox6.TabIndex = 24;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Pantalla";
+            this.groupBox6.Text = "Mensajes";
             // 
             // labelPantalla
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cajero;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace CajeroClases
         MoneyManager moneyManager;
         Inventario inventario;
         DisplayControl displayControl;
+        DBManager dbManager;
         Timer timer;
 
         public ControlCentral()
@@ -21,9 +23,11 @@ namespace CajeroClases
             moneyManager = new MoneyManager();
             inventario = new Inventario();
             displayControl = new DisplayControl();
+            dbManager = new DBManager();
             displayControl.Cajero = cajero;
             moneyManager.Cajero = cajero;
             moneyManager.Cajero.Denominaciones.ForEach(e => e[1] += 3);
+            inventario.DBManager = this.dbManager;
             timer = new Timer(1000);
         }
 
@@ -31,6 +35,7 @@ namespace CajeroClases
         public MoneyManager MoneyManager { get => moneyManager; set => moneyManager = value; }
         public Inventario Inventario { get => inventario; set => inventario = value; }
         public DisplayControl DisplayControl { get => displayControl; set => displayControl = value; }
+        public DBManager DBManager { get => dbManager; set => dbManager = value; }
 
         public void GetChange()
         {
@@ -86,7 +91,15 @@ namespace CajeroClases
             {
                 inventario.ProductoElegido = inventario.Productos.Find(element => element.Codigo == displayControl.TxtDisplay.Text);
 
-                moneyManager.DineroPorCobrar += inventario.ProductoElegido.Precio;
+                if (inventario.ProductoElegido != null)
+                {
+                    moneyManager.DineroPorCobrar += inventario.ProductoElegido.Precio;
+                }
+                else
+                {
+                    displayControl.ChangeLabelPantallaState($"No existe un producto con ese código");
+                    return;
+                }
 
                 displayControl.ChangeLabelTotalState($"Total: {moneyManager.DineroPorCobrar}$");
                 displayControl.ChangeLabelPantallaState($"Usted ha elegido el producto: {inventario.ProductoElegido.Nombre}");

@@ -17,8 +17,9 @@ namespace CajeroForms
 
         public Form1()
         {
-            Control.CheckForIllegalCrossThreadCalls = false;
             InitializeComponent();
+
+            Control.CheckForIllegalCrossThreadCalls = false;
 
             controlCentral.DisplayControl.InitializeDisplayControlTextBoxes(
                 txtInput, txt1peso, txt2pesos, txt5pesos, txt10pesos, txt20pesos, txt50pesos,

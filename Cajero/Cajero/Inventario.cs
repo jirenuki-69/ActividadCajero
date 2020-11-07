@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cajero;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,38 +9,34 @@ namespace CajeroClases
 {
     public class Inventario
     {
-        private List<Producto> productos;
+        List<Producto> productos;
+        List<List<string>> dbManagerData = new List<List<string>>();
         Producto productoElegido = new Producto();
+        DBManager dbManager = new DBManager();
 
         public List<Producto> Productos { get => productos; set => productos = value; }
         public Producto ProductoElegido { get => productoElegido; set => productoElegido = value; }
+        public DBManager DBManager { get => dbManager; set => dbManager = value; }
+        public List<List<string>> DBManagerData { get => dbManagerData; set => dbManagerData = value; }
 
         public Inventario()
         {
-            productos = new List<Producto>()
-        {
-            new Producto(){
-                Codigo = "A01",
-                Nombre = "Coca cola de lata",
-                Imagen = "https://www.elpasospirits.com/assets/images/coca%20cola%20sin%20azucar%20lata%20235%20ml.png",
-                Precio = 13,
-                Existencia = 8
-            },
-            new Producto(){
-                Codigo = "B03",
-                Nombre = "Sprite de lata",
-                Imagen = "https://www.laconstancia.com/system/balloom/asset/pictures/attachments/000/001/107/original/lata.png",
-                Precio = 11,
-                Existencia = 6
-            },
-            new Producto(){
-                Codigo = "F02",
-                Nombre = "Botella de Dr. Pepper",
-                Imagen = "https://www.drpepper.com/images/featured/drpepper-diet.png",
-                Precio = 12,
-                Existencia = 3
-            },
-        };
+            dbManagerData = dbManager.GetProducts();
+            productos = new List<Producto>();
+
+            for (int i = 0; i < dbManagerData.Count; ++i)
+            {
+                productos.Add(
+                    new Producto
+                    {
+                        Codigo = dbManagerData[i][0],
+                        Nombre = dbManagerData[i][1],
+                        Imagen = dbManagerData[i][2],
+                        Precio = Convert.ToInt32(dbManagerData[i][3]),
+                        Existencia = Convert.ToInt32(dbManagerData[i][4]),
+                    }    
+                );
+            }
         }
     }
 }
