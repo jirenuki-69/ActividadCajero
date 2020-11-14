@@ -52,18 +52,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn500b = new System.Windows.Forms.Button();
-            this.btn20b = new System.Windows.Forms.Button();
-            this.btn50b = new System.Windows.Forms.Button();
-            this.btn2p = new System.Windows.Forms.Button();
-            this.btn200b = new System.Windows.Forms.Button();
-            this.btn1p = new System.Windows.Forms.Button();
-            this.btn100b = new System.Windows.Forms.Button();
-            this.btn5p = new System.Windows.Forms.Button();
-            this.btn10p = new System.Windows.Forms.Button();
-            this.labelIntroducido = new System.Windows.Forms.Label();
-            this.labelTotal = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.labelPantalla = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -88,20 +77,42 @@
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.txtHora = new System.Windows.Forms.TextBox();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.labelTotal = new System.Windows.Forms.Label();
+            this.labelIntroducido = new System.Windows.Forms.Label();
+            this.btn10p = new System.Windows.Forms.Button();
+            this.btn5p = new System.Windows.Forms.Button();
+            this.btn100b = new System.Windows.Forms.Button();
+            this.btn1p = new System.Windows.Forms.Button();
+            this.btn200b = new System.Windows.Forms.Button();
+            this.btn2p = new System.Windows.Forms.Button();
+            this.btn50b = new System.Windows.Forms.Button();
+            this.btn20b = new System.Windows.Forms.Button();
+            this.btn500b = new System.Windows.Forms.Button();
+            this.listViewProductos = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listViewProductos = new System.Windows.Forms.ListView();
+            this.listViewTiempoAire = new System.Windows.Forms.ListView();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.button12 = new System.Windows.Forms.Button();
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnSELECT = new System.Windows.Forms.Button();
+            this.btnTELEFONO = new System.Windows.Forms.Button();
+            this.labelSaldo = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.labelSaldo);
             this.groupBox1.Controls.Add(this.labelDineroTotal);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txt50pesos);
@@ -134,7 +145,7 @@
             // labelDineroTotal
             // 
             this.labelDineroTotal.AutoSize = true;
-            this.labelDineroTotal.Location = new System.Drawing.Point(220, 485);
+            this.labelDineroTotal.Location = new System.Drawing.Point(215, 469);
             this.labelDineroTotal.Name = "labelDineroTotal";
             this.labelDineroTotal.Size = new System.Drawing.Size(23, 26);
             this.labelDineroTotal.TabIndex = 46;
@@ -143,7 +154,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 485);
+            this.label1.Location = new System.Drawing.Point(9, 469);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(205, 26);
             this.label1.TabIndex = 45;
@@ -311,163 +322,15 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Monedas de 1";
             // 
-            // groupBox2
+            // imageList1
             // 
-            this.groupBox2.Controls.Add(this.listViewProductos);
-            this.groupBox2.Controls.Add(this.btn500b);
-            this.groupBox2.Controls.Add(this.btn20b);
-            this.groupBox2.Controls.Add(this.btn50b);
-            this.groupBox2.Controls.Add(this.btn2p);
-            this.groupBox2.Controls.Add(this.btn200b);
-            this.groupBox2.Controls.Add(this.btn1p);
-            this.groupBox2.Controls.Add(this.btn100b);
-            this.groupBox2.Controls.Add(this.btn5p);
-            this.groupBox2.Controls.Add(this.btn10p);
-            this.groupBox2.Controls.Add(this.labelIntroducido);
-            this.groupBox2.Controls.Add(this.labelTotal);
-            this.groupBox2.Font = new System.Drawing.Font("Nunito SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(603, 27);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(805, 568);
-            this.groupBox2.TabIndex = 23;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Productos e inserción de monedas";
-            // 
-            // btn500b
-            // 
-            this.btn500b.BackColor = System.Drawing.Color.DarkViolet;
-            this.btn500b.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn500b.ForeColor = System.Drawing.Color.White;
-            this.btn500b.Location = new System.Drawing.Point(475, 506);
-            this.btn500b.Name = "btn500b";
-            this.btn500b.Size = new System.Drawing.Size(120, 45);
-            this.btn500b.TabIndex = 39;
-            this.btn500b.Text = "Billete 500";
-            this.btn500b.UseVisualStyleBackColor = false;
-            this.btn500b.Click += new System.EventHandler(this.btn500b_Click);
-            // 
-            // btn20b
-            // 
-            this.btn20b.BackColor = System.Drawing.Color.DarkViolet;
-            this.btn20b.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn20b.ForeColor = System.Drawing.Color.White;
-            this.btn20b.Location = new System.Drawing.Point(536, 450);
-            this.btn20b.Name = "btn20b";
-            this.btn20b.Size = new System.Drawing.Size(120, 45);
-            this.btn20b.TabIndex = 38;
-            this.btn20b.Text = "Billete 20";
-            this.btn20b.UseVisualStyleBackColor = false;
-            this.btn20b.Click += new System.EventHandler(this.btn20b_Click);
-            // 
-            // btn50b
-            // 
-            this.btn50b.BackColor = System.Drawing.Color.DarkViolet;
-            this.btn50b.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn50b.ForeColor = System.Drawing.Color.White;
-            this.btn50b.Location = new System.Drawing.Point(662, 450);
-            this.btn50b.Name = "btn50b";
-            this.btn50b.Size = new System.Drawing.Size(120, 45);
-            this.btn50b.TabIndex = 36;
-            this.btn50b.Text = "Billete 50";
-            this.btn50b.UseVisualStyleBackColor = false;
-            this.btn50b.Click += new System.EventHandler(this.btn50b_Click);
-            // 
-            // btn2p
-            // 
-            this.btn2p.BackColor = System.Drawing.Color.DarkViolet;
-            this.btn2p.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn2p.ForeColor = System.Drawing.Color.White;
-            this.btn2p.Location = new System.Drawing.Point(158, 450);
-            this.btn2p.Name = "btn2p";
-            this.btn2p.Size = new System.Drawing.Size(120, 45);
-            this.btn2p.TabIndex = 33;
-            this.btn2p.Text = "2 Pesos";
-            this.btn2p.UseVisualStyleBackColor = false;
-            this.btn2p.Click += new System.EventHandler(this.btn2p_Click);
-            // 
-            // btn200b
-            // 
-            this.btn200b.BackColor = System.Drawing.Color.DarkViolet;
-            this.btn200b.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn200b.ForeColor = System.Drawing.Color.White;
-            this.btn200b.Location = new System.Drawing.Point(350, 506);
-            this.btn200b.Name = "btn200b";
-            this.btn200b.Size = new System.Drawing.Size(120, 45);
-            this.btn200b.TabIndex = 37;
-            this.btn200b.Text = "Billete 200";
-            this.btn200b.UseVisualStyleBackColor = false;
-            this.btn200b.Click += new System.EventHandler(this.btn200b_Click);
-            // 
-            // btn1p
-            // 
-            this.btn1p.BackColor = System.Drawing.Color.DarkViolet;
-            this.btn1p.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn1p.ForeColor = System.Drawing.Color.White;
-            this.btn1p.Location = new System.Drawing.Point(32, 450);
-            this.btn1p.Name = "btn1p";
-            this.btn1p.Size = new System.Drawing.Size(120, 45);
-            this.btn1p.TabIndex = 35;
-            this.btn1p.Text = "1 Peso";
-            this.btn1p.UseVisualStyleBackColor = false;
-            this.btn1p.Click += new System.EventHandler(this.btn1p_Click);
-            // 
-            // btn100b
-            // 
-            this.btn100b.BackColor = System.Drawing.Color.DarkViolet;
-            this.btn100b.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn100b.ForeColor = System.Drawing.Color.White;
-            this.btn100b.Location = new System.Drawing.Point(224, 506);
-            this.btn100b.Name = "btn100b";
-            this.btn100b.Size = new System.Drawing.Size(120, 45);
-            this.btn100b.TabIndex = 34;
-            this.btn100b.Text = "Billete 100";
-            this.btn100b.UseVisualStyleBackColor = false;
-            this.btn100b.Click += new System.EventHandler(this.btn100b_Click);
-            // 
-            // btn5p
-            // 
-            this.btn5p.BackColor = System.Drawing.Color.DarkViolet;
-            this.btn5p.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn5p.ForeColor = System.Drawing.Color.White;
-            this.btn5p.Location = new System.Drawing.Point(284, 450);
-            this.btn5p.Name = "btn5p";
-            this.btn5p.Size = new System.Drawing.Size(120, 45);
-            this.btn5p.TabIndex = 31;
-            this.btn5p.Text = "5 Pesos";
-            this.btn5p.UseVisualStyleBackColor = false;
-            this.btn5p.Click += new System.EventHandler(this.btn5p_Click);
-            // 
-            // btn10p
-            // 
-            this.btn10p.BackColor = System.Drawing.Color.DarkViolet;
-            this.btn10p.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn10p.ForeColor = System.Drawing.Color.White;
-            this.btn10p.Location = new System.Drawing.Point(410, 450);
-            this.btn10p.Name = "btn10p";
-            this.btn10p.Size = new System.Drawing.Size(120, 45);
-            this.btn10p.TabIndex = 29;
-            this.btn10p.Text = "10 Pesos";
-            this.btn10p.UseVisualStyleBackColor = false;
-            this.btn10p.Click += new System.EventHandler(this.btn10p_Click);
-            // 
-            // labelIntroducido
-            // 
-            this.labelIntroducido.AutoSize = true;
-            this.labelIntroducido.Location = new System.Drawing.Point(193, 404);
-            this.labelIntroducido.Name = "labelIntroducido";
-            this.labelIntroducido.Size = new System.Drawing.Size(170, 26);
-            this.labelIntroducido.TabIndex = 28;
-            this.labelIntroducido.Text = "Introducido: 0.00$";
-            // 
-            // labelTotal
-            // 
-            this.labelTotal.AutoSize = true;
-            this.labelTotal.Location = new System.Drawing.Point(467, 404);
-            this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(115, 26);
-            this.labelTotal.TabIndex = 27;
-            this.labelTotal.Text = "Total: 0.00$";
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "1.png");
+            this.imageList1.Images.SetKeyName(1, "2.png");
+            this.imageList1.Images.SetKeyName(2, "3.png");
+            this.imageList1.Images.SetKeyName(3, "4.jpg");
+            this.imageList1.Images.SetKeyName(4, "5.png");
             // 
             // groupBox6
             // 
@@ -521,6 +384,7 @@
             this.txtInput.ReadOnly = true;
             this.txtInput.Size = new System.Drawing.Size(285, 138);
             this.txtInput.TabIndex = 26;
+            this.txtInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtInput.TextChanged += new System.EventHandler(this.txtInput_TextChanged);
             // 
             // button1
@@ -768,15 +632,184 @@
             this.txtHora.TabIndex = 45;
             this.txtHora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // imageList1
+            // groupBox2
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "1.png");
-            this.imageList1.Images.SetKeyName(1, "2.png");
-            this.imageList1.Images.SetKeyName(2, "3.png");
-            this.imageList1.Images.SetKeyName(3, "4.jpg");
-            this.imageList1.Images.SetKeyName(4, "5.png");
+            this.groupBox2.Controls.Add(this.btnSELECT);
+            this.groupBox2.Controls.Add(this.btn500b);
+            this.groupBox2.Controls.Add(this.listViewProductos);
+            this.groupBox2.Controls.Add(this.btn20b);
+            this.groupBox2.Controls.Add(this.btn50b);
+            this.groupBox2.Controls.Add(this.btn2p);
+            this.groupBox2.Controls.Add(this.btn200b);
+            this.groupBox2.Controls.Add(this.btn1p);
+            this.groupBox2.Controls.Add(this.btn100b);
+            this.groupBox2.Controls.Add(this.btn5p);
+            this.groupBox2.Controls.Add(this.btn10p);
+            this.groupBox2.Controls.Add(this.labelIntroducido);
+            this.groupBox2.Controls.Add(this.labelTotal);
+            this.groupBox2.Controls.Add(this.listViewTiempoAire);
+            this.groupBox2.Font = new System.Drawing.Font("Nunito SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(603, 27);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(805, 568);
+            this.groupBox2.TabIndex = 23;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Productos y Tiempo Aire";
+            // 
+            // labelTotal
+            // 
+            this.labelTotal.AutoSize = true;
+            this.labelTotal.Location = new System.Drawing.Point(467, 404);
+            this.labelTotal.Name = "labelTotal";
+            this.labelTotal.Size = new System.Drawing.Size(115, 26);
+            this.labelTotal.TabIndex = 27;
+            this.labelTotal.Text = "Total: 0.00$";
+            // 
+            // labelIntroducido
+            // 
+            this.labelIntroducido.AutoSize = true;
+            this.labelIntroducido.Location = new System.Drawing.Point(193, 404);
+            this.labelIntroducido.Name = "labelIntroducido";
+            this.labelIntroducido.Size = new System.Drawing.Size(170, 26);
+            this.labelIntroducido.TabIndex = 28;
+            this.labelIntroducido.Text = "Introducido: 0.00$";
+            // 
+            // btn10p
+            // 
+            this.btn10p.BackColor = System.Drawing.Color.DarkViolet;
+            this.btn10p.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn10p.ForeColor = System.Drawing.Color.White;
+            this.btn10p.Location = new System.Drawing.Point(410, 450);
+            this.btn10p.Name = "btn10p";
+            this.btn10p.Size = new System.Drawing.Size(120, 45);
+            this.btn10p.TabIndex = 29;
+            this.btn10p.Text = "10 Pesos";
+            this.btn10p.UseVisualStyleBackColor = false;
+            this.btn10p.Click += new System.EventHandler(this.btn10p_Click);
+            // 
+            // btn5p
+            // 
+            this.btn5p.BackColor = System.Drawing.Color.DarkViolet;
+            this.btn5p.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn5p.ForeColor = System.Drawing.Color.White;
+            this.btn5p.Location = new System.Drawing.Point(284, 450);
+            this.btn5p.Name = "btn5p";
+            this.btn5p.Size = new System.Drawing.Size(120, 45);
+            this.btn5p.TabIndex = 31;
+            this.btn5p.Text = "5 Pesos";
+            this.btn5p.UseVisualStyleBackColor = false;
+            this.btn5p.Click += new System.EventHandler(this.btn5p_Click);
+            // 
+            // btn100b
+            // 
+            this.btn100b.BackColor = System.Drawing.Color.DarkViolet;
+            this.btn100b.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn100b.ForeColor = System.Drawing.Color.White;
+            this.btn100b.Location = new System.Drawing.Point(224, 506);
+            this.btn100b.Name = "btn100b";
+            this.btn100b.Size = new System.Drawing.Size(120, 45);
+            this.btn100b.TabIndex = 34;
+            this.btn100b.Text = "Billete 100";
+            this.btn100b.UseVisualStyleBackColor = false;
+            this.btn100b.Click += new System.EventHandler(this.btn100b_Click);
+            // 
+            // btn1p
+            // 
+            this.btn1p.BackColor = System.Drawing.Color.DarkViolet;
+            this.btn1p.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn1p.ForeColor = System.Drawing.Color.White;
+            this.btn1p.Location = new System.Drawing.Point(32, 450);
+            this.btn1p.Name = "btn1p";
+            this.btn1p.Size = new System.Drawing.Size(120, 45);
+            this.btn1p.TabIndex = 35;
+            this.btn1p.Text = "1 Peso";
+            this.btn1p.UseVisualStyleBackColor = false;
+            this.btn1p.Click += new System.EventHandler(this.btn1p_Click);
+            // 
+            // btn200b
+            // 
+            this.btn200b.BackColor = System.Drawing.Color.DarkViolet;
+            this.btn200b.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn200b.ForeColor = System.Drawing.Color.White;
+            this.btn200b.Location = new System.Drawing.Point(350, 506);
+            this.btn200b.Name = "btn200b";
+            this.btn200b.Size = new System.Drawing.Size(120, 45);
+            this.btn200b.TabIndex = 37;
+            this.btn200b.Text = "Billete 200";
+            this.btn200b.UseVisualStyleBackColor = false;
+            this.btn200b.Click += new System.EventHandler(this.btn200b_Click);
+            // 
+            // btn2p
+            // 
+            this.btn2p.BackColor = System.Drawing.Color.DarkViolet;
+            this.btn2p.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn2p.ForeColor = System.Drawing.Color.White;
+            this.btn2p.Location = new System.Drawing.Point(158, 450);
+            this.btn2p.Name = "btn2p";
+            this.btn2p.Size = new System.Drawing.Size(120, 45);
+            this.btn2p.TabIndex = 33;
+            this.btn2p.Text = "2 Pesos";
+            this.btn2p.UseVisualStyleBackColor = false;
+            this.btn2p.Click += new System.EventHandler(this.btn2p_Click);
+            // 
+            // btn50b
+            // 
+            this.btn50b.BackColor = System.Drawing.Color.DarkViolet;
+            this.btn50b.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn50b.ForeColor = System.Drawing.Color.White;
+            this.btn50b.Location = new System.Drawing.Point(662, 450);
+            this.btn50b.Name = "btn50b";
+            this.btn50b.Size = new System.Drawing.Size(120, 45);
+            this.btn50b.TabIndex = 36;
+            this.btn50b.Text = "Billete 50";
+            this.btn50b.UseVisualStyleBackColor = false;
+            this.btn50b.Click += new System.EventHandler(this.btn50b_Click);
+            // 
+            // btn20b
+            // 
+            this.btn20b.BackColor = System.Drawing.Color.DarkViolet;
+            this.btn20b.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn20b.ForeColor = System.Drawing.Color.White;
+            this.btn20b.Location = new System.Drawing.Point(536, 450);
+            this.btn20b.Name = "btn20b";
+            this.btn20b.Size = new System.Drawing.Size(120, 45);
+            this.btn20b.TabIndex = 38;
+            this.btn20b.Text = "Billete 20";
+            this.btn20b.UseVisualStyleBackColor = false;
+            this.btn20b.Click += new System.EventHandler(this.btn20b_Click);
+            // 
+            // btn500b
+            // 
+            this.btn500b.BackColor = System.Drawing.Color.DarkViolet;
+            this.btn500b.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn500b.ForeColor = System.Drawing.Color.White;
+            this.btn500b.Location = new System.Drawing.Point(475, 506);
+            this.btn500b.Name = "btn500b";
+            this.btn500b.Size = new System.Drawing.Size(120, 45);
+            this.btn500b.TabIndex = 39;
+            this.btn500b.Text = "Billete 500";
+            this.btn500b.UseVisualStyleBackColor = false;
+            this.btn500b.Click += new System.EventHandler(this.btn500b_Click);
+            // 
+            // listViewProductos
+            // 
+            this.listViewProductos.BackColor = System.Drawing.Color.Indigo;
+            this.listViewProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listViewProductos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listViewProductos.ForeColor = System.Drawing.Color.White;
+            this.listViewProductos.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listViewProductos.HideSelection = false;
+            this.listViewProductos.Location = new System.Drawing.Point(32, 38);
+            this.listViewProductos.Name = "listViewProductos";
+            this.listViewProductos.Size = new System.Drawing.Size(750, 353);
+            this.listViewProductos.SmallImageList = this.imageList1;
+            this.listViewProductos.TabIndex = 46;
+            this.listViewProductos.UseCompatibleStateImageBehavior = false;
             // 
             // columnHeader1
             // 
@@ -801,24 +834,96 @@
             this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader4.Width = 187;
             // 
-            // listViewProductos
+            // listViewTiempoAire
             // 
-            this.listViewProductos.BackColor = System.Drawing.Color.Indigo;
-            this.listViewProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listViewProductos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.listViewProductos.ForeColor = System.Drawing.Color.White;
-            this.listViewProductos.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listViewProductos.HideSelection = false;
-            this.listViewProductos.Location = new System.Drawing.Point(32, 46);
-            this.listViewProductos.Name = "listViewProductos";
-            this.listViewProductos.Size = new System.Drawing.Size(750, 353);
-            this.listViewProductos.SmallImageList = this.imageList1;
-            this.listViewProductos.TabIndex = 46;
-            this.listViewProductos.UseCompatibleStateImageBehavior = false;
+            this.listViewTiempoAire.BackColor = System.Drawing.Color.Indigo;
+            this.listViewTiempoAire.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listViewTiempoAire.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader8,
+            this.columnHeader9});
+            this.listViewTiempoAire.ForeColor = System.Drawing.Color.White;
+            this.listViewTiempoAire.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listViewTiempoAire.HideSelection = false;
+            this.listViewTiempoAire.Location = new System.Drawing.Point(32, 42);
+            this.listViewTiempoAire.Name = "listViewTiempoAire";
+            this.listViewTiempoAire.Size = new System.Drawing.Size(750, 353);
+            this.listViewTiempoAire.TabIndex = 47;
+            this.listViewTiempoAire.UseCompatibleStateImageBehavior = false;
+            this.listViewTiempoAire.Visible = false;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Nombre";
+            this.columnHeader5.Width = 187;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Tiempo aire";
+            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader6.Width = 187;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Compañía";
+            this.columnHeader8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader8.Width = 187;
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.DarkViolet;
+            this.button12.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.ForeColor = System.Drawing.Color.White;
+            this.button12.Location = new System.Drawing.Point(539, 37);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(57, 44);
+            this.button12.TabIndex = 48;
+            this.button12.Text = "Swap";
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Descripción";
+            this.columnHeader9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader9.Width = 187;
+            // 
+            // btnSELECT
+            // 
+            this.btnSELECT.BackColor = System.Drawing.Color.DarkViolet;
+            this.btnSELECT.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSELECT.ForeColor = System.Drawing.Color.White;
+            this.btnSELECT.Location = new System.Drawing.Point(662, 506);
+            this.btnSELECT.Name = "btnSELECT";
+            this.btnSELECT.Size = new System.Drawing.Size(120, 45);
+            this.btnSELECT.TabIndex = 48;
+            this.btnSELECT.Text = "Select Tiempo";
+            this.btnSELECT.UseVisualStyleBackColor = false;
+            this.btnSELECT.Visible = false;
+            this.btnSELECT.Click += new System.EventHandler(this.btnSELECT_Click);
+            // 
+            // btnTELEFONO
+            // 
+            this.btnTELEFONO.BackColor = System.Drawing.Color.DarkViolet;
+            this.btnTELEFONO.Font = new System.Drawing.Font("Nunito", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTELEFONO.ForeColor = System.Drawing.Color.White;
+            this.btnTELEFONO.Location = new System.Drawing.Point(540, 99);
+            this.btnTELEFONO.Name = "btnTELEFONO";
+            this.btnTELEFONO.Size = new System.Drawing.Size(57, 44);
+            this.btnTELEFONO.TabIndex = 49;
+            this.btnTELEFONO.Text = "Num";
+            this.btnTELEFONO.UseVisualStyleBackColor = false;
+            this.btnTELEFONO.Click += new System.EventHandler(this.btnTELEFONO_Click);
+            // 
+            // labelSaldo
+            // 
+            this.labelSaldo.AutoSize = true;
+            this.labelSaldo.Location = new System.Drawing.Point(9, 504);
+            this.labelSaldo.Name = "labelSaldo";
+            this.labelSaldo.Size = new System.Drawing.Size(229, 26);
+            this.labelSaldo.TabIndex = 47;
+            this.labelSaldo.Text = "Saldo total del número: 0";
             // 
             // Form1
             // 
@@ -826,6 +931,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Indigo;
             this.ClientSize = new System.Drawing.Size(1734, 745);
+            this.Controls.Add(this.btnTELEFONO);
+            this.Controls.Add(this.button12);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.txtHora);
             this.Controls.Add(this.button18);
             this.Controls.Add(this.button17);
@@ -848,18 +956,18 @@
             this.Controls.Add(this.txtInput);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
-            this.Text = "Cajero automático";
+            this.Text = "Vending Machine";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -887,18 +995,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btn500b;
-        private System.Windows.Forms.Button btn20b;
-        private System.Windows.Forms.Button btn50b;
-        private System.Windows.Forms.Button btn2p;
-        private System.Windows.Forms.Button btn200b;
-        private System.Windows.Forms.Button btn1p;
-        private System.Windows.Forms.Button btn100b;
-        private System.Windows.Forms.Button btn5p;
-        private System.Windows.Forms.Button btn10p;
-        private System.Windows.Forms.Label labelIntroducido;
-        private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label labelPantalla;
         private System.Windows.Forms.GroupBox groupBox7;
@@ -926,11 +1022,33 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtHora;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListView listViewProductos;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Button btn500b;
+        private System.Windows.Forms.Button btn20b;
+        private System.Windows.Forms.Button btn50b;
+        private System.Windows.Forms.Button btn2p;
+        private System.Windows.Forms.Button btn200b;
+        private System.Windows.Forms.Button btn1p;
+        private System.Windows.Forms.Button btn100b;
+        private System.Windows.Forms.Button btn5p;
+        private System.Windows.Forms.Button btn10p;
+        private System.Windows.Forms.Label labelIntroducido;
+        private System.Windows.Forms.Label labelTotal;
+        private System.Windows.Forms.ListView listViewTiempoAire;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.Button btnSELECT;
+        private System.Windows.Forms.Label labelSaldo;
+        private System.Windows.Forms.Button btnTELEFONO;
     }
 }
 

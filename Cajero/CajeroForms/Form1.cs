@@ -15,6 +15,8 @@ namespace CajeroForms
     {
         ControlCentral controlCentral = new ControlCentral();
 
+        public ControlCentral ControlCentral { get => controlCentral; }
+
         public Form1()
         {
             InitializeComponent();
@@ -27,12 +29,19 @@ namespace CajeroForms
             );
 
             controlCentral.DisplayControl.InitializeDisplayControlLabels(
-                labelPantalla, labelDineroTotal, labelMonedero, labelIntroducido, labelTotal
+                labelPantalla, labelDineroTotal, labelMonedero, labelIntroducido, labelTotal,
+                labelSaldo
             );
 
-            controlCentral.DisplayControl.GetListView(listViewProductos);
+            controlCentral.DisplayControl.InitializeDisplayControlLV(listViewProductos, listViewTiempoAire);
+
+            controlCentral.DisplayControl.InitButton(btnSELECT, btnTELEFONO);
+
+            controlCentral.DisplayControl.GetListView();
 
             controlCentral.DisplayControl.RefreshTxtDenominations();
+
+            controlCentral.MoneyManager.GetDineroTotal();
 
             controlCentral.InitTimer();
 
@@ -222,6 +231,27 @@ namespace CajeroForms
         private void txtInput_TextChanged(object sender, EventArgs e)
         {
             controlCentral.GetProduct();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            controlCentral.DisplayControl.SwapListViews();
+        }
+
+        private void btnSELECT_Click(object sender, EventArgs e)
+        {
+            controlCentral.SelectTiempo();
+        }
+
+        private void btnTELEFONO_Click(object sender, EventArgs e)
+        {
+            Telefono telefono = new Telefono(this);
+            telefono.Show();
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            controlCentral.Timer.Dispose();
         }
     }
 }
