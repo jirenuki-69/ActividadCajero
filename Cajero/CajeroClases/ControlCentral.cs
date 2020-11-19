@@ -34,11 +34,11 @@ namespace CajeroClases
             moneyManager.Cajero.Denominaciones.ForEach(e => e[1] += 3);
             moneyManager.Inventario = this.inventario;
             inventario.DBManager = this.dbManager;
-            displayControl.DBManagerData = this.inventario.DBManagerData;
             displayControl.Inventario = this.inventario;
             displayControl.MoneyManager = this.moneyManager;
             timer = new Timer(1000);
             timerProducto = new Timer(2000);
+            dbManager.GetTransactions();
         }
 
         public Cajero Cajero { get => cajero; set => cajero = value; }
@@ -69,6 +69,14 @@ namespace CajeroClases
                     timerProducto.Elapsed += TimerProducto_Elapsed;
                     timerProducto.Start();
                     inventario.HayProducto = false;
+                }
+
+                if ((inventario.ExperienciaElegida as Producto).Codigo != null)
+                {
+                    inventario.TransactionCount = inventario.Transacciones.Count + 1;
+                    dbManager.TransactionPutRequest(inventario.TransactionCount, (inventario.ExperienciaElegida as Producto));
+                    inventario.Transacciones = dbManager.GetTransactions();
+                    inventario.TransactionCount += 1;
                 }
             } 
             else 

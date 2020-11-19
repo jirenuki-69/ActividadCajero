@@ -11,11 +11,13 @@ namespace CajeroClases
     {
         List<Experiencia> experiencias;
         List<Servicio> servicios;
+        List<List<string>> transacciones;
         List<List<string>> dbManagerData = new List<List<string>>();
         Experiencia experienciaElegida;
         DBManager dbManager = new DBManager();
         int index = 0;
         int index2 = 0;
+        int transactionCount = 0;
         bool hayProducto = false;
 
         public DBManager DBManager { get => dbManager; set => dbManager = value; }
@@ -26,6 +28,8 @@ namespace CajeroClases
         public int Index2 { get => index2; set => index2 = value; }
         public Experiencia ExperienciaElegida { get => experienciaElegida; set => experienciaElegida = value; }
         public bool HayProducto { get => hayProducto; set => hayProducto = value; }
+        public int TransactionCount { get => transactionCount; set => transactionCount = value; }
+        public List<List<string>> Transacciones { get => transacciones; set => transacciones = value; }
 
         public Inventario()
         {
@@ -67,6 +71,8 @@ namespace CajeroClases
             {
                 experiencias.Add(servicio);
             }
+
+            transacciones = dbManager.GetTransactions();
         }
     }
 }

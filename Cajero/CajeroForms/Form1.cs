@@ -253,5 +253,11 @@ namespace CajeroForms
         {
             controlCentral.Timer.Dispose();
         }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            Transacciones transacciones = new Transacciones(this);
+            transacciones.Show();
+        }
     }
 }

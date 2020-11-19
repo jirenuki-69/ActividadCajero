@@ -13,8 +13,8 @@ namespace CajeroClases
         TextBox txtDisplay, txt1p, txt2p, txt5p, txt10p, txt20p, txt50p, txt100p, txt200p, txt500p, txtHora;
         Label labelPantalla, labelDineroTotal, labelMonedero, labelIntroducido, labelTotal, labelSaldo;
         ListView LVProductos, LVTiempoAire;
+        ListView LVTransacciones = new ListView();
         Button btnSELECT, btnTELEFONO;
-        List<List<string>> dbManagerData;
         Cajero cajero = new Cajero();
         Inventario inventario;
         MoneyManager moneyManager;
@@ -22,11 +22,11 @@ namespace CajeroClases
 
         public TextBox TxtDisplay { get => txtDisplay; set => txtDisplay = value; }
         public Cajero Cajero { set => cajero = value; }
-        public List<List<string>> DBManagerData { get => dbManagerData; set => dbManagerData = value; }
         public Inventario Inventario { get => inventario; set => inventario = value; }
         public ListView LVTiempoAire1 { get => LVTiempoAire; set => LVTiempoAire = value; }
         public string NumeroTelefonico { get => numeroTelefonico; set => numeroTelefonico = value; }
         public MoneyManager MoneyManager { get => moneyManager; set => moneyManager = value; }
+        public ListView LVTransacciones1 { get => LVTransacciones; set => LVTransacciones = value; }
 
         public void InitializeDisplayControlTextBoxes(params TextBox[] otherTextBoxes)
         {
@@ -167,7 +167,6 @@ namespace CajeroClases
 
         public void GetListView()
         {
-
             LVProductos.View = View.Details;
 
             for (int i = 0; i < inventario.Index; ++i)
@@ -199,6 +198,33 @@ namespace CajeroClases
 
                 LVTiempoAire1.Items.Add(listViewItem);
             }
+        }
+
+        public ListView GetListViewTransactions()
+        {
+            LVTransacciones.Columns.Add("ID").Width = 273;
+            LVTransacciones.Columns.Add("ID_EXPERIENCIA").Width = 273;
+            LVTransacciones.Columns.Add("FECHA").Width = 273;
+
+            LVTransacciones.Columns[0].TextAlign = HorizontalAlignment.Center;
+            LVTransacciones.Columns[1].TextAlign = HorizontalAlignment.Center;
+            LVTransacciones.Columns[2].TextAlign = HorizontalAlignment.Center;
+
+            LVTransacciones.View = View.Details;
+
+            for (int i = 0; i < inventario.Transacciones.Count; ++i)
+            {
+                ListViewItem listViewItem = new ListViewItem(
+                    $"{inventario.Transacciones[i][0]}"
+                );
+
+                listViewItem.SubItems.Add($"{inventario.Transacciones[i][1]}");
+                listViewItem.SubItems.Add($"{inventario.Transacciones[i][2]}");
+
+                LVTransacciones.Items.Add(listViewItem);
+            }
+
+            return LVTransacciones;
         }
     }
 }
